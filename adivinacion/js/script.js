@@ -12,6 +12,6 @@ while (pantalla!=numAl){
   if (pantalla<numAl) {alert("TE QUEDASTE CORTO");}
   else if (pantalla>numAl) {alert("TE PASASTE")}
 }
-  alert("ACERTASTE");
+  alert("¡¡¡ACERTASTE!!!");
 
 console.log("funciona");
