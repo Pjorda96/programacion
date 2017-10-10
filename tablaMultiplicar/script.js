@@ -1,6 +1,6 @@
 var pantalla=prompt("Introduce un número del 1 al 100");
 while (isNaN(pantalla)==true || pantalla<=0 || pantalla>100){
-  var pantalla=prompt("Introduce un número del 1 al 100");
+  pantalla=prompt("Introduce un número del 1 al 100");
   alert("Fuera del rango");
 }
 var num=parseInt(pantalla);
