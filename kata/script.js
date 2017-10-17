@@ -2,7 +2,7 @@ var pantalla=prompt("Introduce un número de dos cifras");
 var decenas="";
 var unidades="";
 
-if (pantalla<=15 && pantalla>=11){
+if (pantalla<16 && pantalla>=11){
   if (pantalla==11){decenas="Once";}
   else if (pantalla==12){decenas="Doce";}
   else if (pantalla==13){decenas="Trece";}
