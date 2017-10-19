@@ -17,5 +17,5 @@ while (intentos>cont && letra!=letraIntrod){
   letraIntrod=prompt("Te quedan "+eval("intentos-cont")+" intentos");
   cont++;
 }
-  if (cont>intentos) alert ("No te quedan intentos");
-  else alert("ACERTASTE");
+  if (letra==letraIntrod) alert("ACERTASTE");
+  else alert ("No te quedan intentos");
