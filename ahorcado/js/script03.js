@@ -1,6 +1,14 @@
 //Letra aleatoria (97-122)
-var numAl=Math.round(Math.random() * (122 - 97)) + 97;
+var numAl=Math.round(Math.random() * (4 - 0));
 console.log(numAl);
+
+var palabras=["fernando", "alonso", "pierde", "siempre", "seguro"]
+
+var adivinar=palabras[numAl];
+console.log(adivinar);
+
+var letra=
+
 
 //convertir
 var letra="";
