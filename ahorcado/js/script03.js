@@ -1,4 +1,4 @@
-//Letra aleatoria (97-122)
+//Letra aleatoria (0-4)
 var numAl=Math.round(Math.random() * (4 - 0));
 console.log(numAl);
 
@@ -7,9 +7,25 @@ var palabras=["fernando", "alonso", "pierde", "siempre", "seguro"]
 var adivinar=palabras[numAl];
 console.log(adivinar);
 
-var letra=
+//array de la palabra
+var palabra=[];
+for (let i=0; i<=adivinar.length-1;i++){
+  palabra[i]="";
+}
+
+//pedir letra y comprobar
+var letra=prompt("Introduce una letra");
+var comp=false;
+for (let i=0, i<=adivinar.length-1;i++){
+  if (letra == palabra[i]) {
+    palabra[letra];
+    comp=true;
+  }  
+}
 
 
+
+/*
 //convertir
 var letra="";
 letra=String.fromCharCode(numAl);
