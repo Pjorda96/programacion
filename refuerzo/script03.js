@@ -8,8 +8,9 @@ console.log(pantalla);
 
 console.log("*");
 for(let i=2; i<=pantalla; i++){
-  for (let j=1; j<=i; j++){
-    console.log("*");
-  }
-  console.log("\n");
+  if (i==2) console.log("**");
+  if (i==3) console.log("***");
+  if (i==4) console.log("****");
+  if (i==5) console.log("*****");
+  if (i==6) console.log("******");
 }
