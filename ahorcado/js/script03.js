@@ -16,14 +16,21 @@ for (let i=0; i<=adivinar.length-1;i++){
 //pedir letra y comprobar
 var letra=prompt("Introduce una letra");
 var comp=false;
-for (let i=0, i<=adivinar.length-1;i++){
+for (let i=0; i<=adivinar.length-1; i++){
   if (letra == palabra[i]) {
     palabra[letra];
     comp=true;
-  }  
+  }
 }
+if (comp!=true) console.log(letra);
+comp=false
 
-
+var intentos=5;
+var cont=1;
+while (intentos>cont && letra!=letraIntrod){
+  letraIntrod=prompt("Te quedan "+eval("intentos-cont")+" intentos");
+  cont++;
+}
 
 /*
 //convertir

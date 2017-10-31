@@ -6,11 +6,9 @@ while (isNaN(pantalla)==true || pantalla<2 || pantalla>6){
 pantalla=parseInt(pantalla);
 console.log(pantalla);
 
-console.log("*");
+var asterisco="*"
+console.log(asterisco);
 for(let i=2; i<=pantalla; i++){
-  if (i==2) console.log("**");
-  if (i==3) console.log("***");
-  if (i==4) console.log("****");
-  if (i==5) console.log("*****");
-  if (i==6) console.log("******");
+  asterisco=asterisco+"*";
+  console.log(asterisco);
 }
