@@ -1,4 +1,4 @@
-//Letra aleatoria (0-4)
+//Num aleatorio (0-4)
 var numAl=Math.round(Math.random() * (4 - 0));
 console.log(numAl);
 
@@ -25,6 +25,8 @@ for (let i=0; i<=adivinar.length-1; i++){
 if (comp!=true) console.log(letra);
 comp=false
 
+
+//contador
 var intentos=5;
 var cont=1;
 while (intentos>cont && letra!=letraIntrod){
