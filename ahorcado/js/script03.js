@@ -26,6 +26,7 @@ if (comp!=true) console.log(letra);
 comp=false
 
 
+
 //contador
 var intentos=5;
 var cont=1;
@@ -52,3 +53,4 @@ while (intentos>cont && letra!=letraIntrod){
 }
   if (letra==letraIntrod) alert("ACERTASTE");
   else alert ("No te quedan intentos");
+*/
