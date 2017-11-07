@@ -7,50 +7,55 @@ var palabras=["fernando", "alonso", "pierde", "siempre", "seguro"]
 var adivinar=palabras[numAl];
 console.log(adivinar);
 
-//array de la palabra
-var palabra=[];
-for (let i=0; i<=adivinar.length-1;i++){
-  palabra[i]="";
-}
-
-//pedir letra y comprobar
-var letra=prompt("Introduce una letra");
-var comp=false;
-for (let i=0; i<=adivinar.length-1; i++){
-  if (letra == palabra[i]) {
-    palabra[letra];
-    comp=true;
-  }
-}
-if (comp!=true) console.log(letra);
-comp=false
-
-
-
 //contador
 var intentos=5;
 var cont=1;
-while (intentos>cont && letra!=letraIntrod){
-  letraIntrod=prompt("Te quedan "+eval("intentos-cont")+" intentos");
-  cont++;
+
+//array de la palabra
+var palabra=[];
+for (let i=0; i<=palabra.length-1;i++){
+  palabra[i]="_";
+}
+var preguntar=true;
+var comp=false;
+
+while(intentos>cont && preguntar==true){
+//pedir letra y comprobar si letra
+  var letra=prompt("Introduce una letra");
+  while (isNaN(letra)==false){
+    letra=prompt("Introduce una letra");
+  }
+
+  //colocar letra en plantilla
+  for (let i=0; i<=palabra.length-1; i++){
+    if (letra == adivinar.charAt(i)) {
+      palabra[i]=letra;
+      comp=true;
+    }
+  }
+
+  //comprobar si encontrada
+  if (comp!=true){
+    console.log(letra);
+    alert("Letra encontrada");
+  }else{
+    cont++
+    alert("Te quedan "+eval("intentos-cont")+" intentos");
+  }
+  comp=false
+
+//mostrar array
+  let j="";
+  for (let i=0; i<=adivinar.length-1; i++){
+    j=j+palabra[i];
+  }
+  console.log(j);
+
+  //comprobar si se ha acertado
+  preguntar=false;
+  for (let i=0; i<=adivinar.length-1; i++){
+    if(palabra[i]=="_") preguntar=true;
+  }
 }
 
-/*
-//convertir
-var letra="";
-letra=String.fromCharCode(numAl);
-console.log(letra);
-
-//pedir letra al usuario
-var letraIntrod=prompt("Intenta acertar la letra");
-
-//bucle para mostrar por pantalla el fallo
-var intentos=5;
-var cont=1;
-while (intentos>cont && letra!=letraIntrod){
-  letraIntrod=prompt("Te quedan "+eval("intentos-cont")+" intentos");
-  cont++;
-}
-  if (letra==letraIntrod) alert("ACERTASTE");
-  else alert ("No te quedan intentos");
-*/
+alert("¡¡ENHORABUENA!!");
