@@ -13,16 +13,16 @@ var cont=0;
 
 //array de la palabra a palabraAcertar
 var palabraAcertar=[];
-for (let i=0; i<=palabraAcertar.length-1;i++){
+for (let i=0; i<=adivinar.length-1;i++){
   palabraAcertar[i]=adivinar.charAt(i);
 }
 
-//array de la palabra
+//array de la palabra a adivinar
 var palabra=[];
 for (let i=0; i<=palabraAcertar.length-1;i++){
   palabra[i]="_";
 }
-var barrabaja=6;
+var barrabaja=6;  //cualquier número diferente de 0
 var comp=false;
 
 while(intentos>cont && barrabaja!=0){
@@ -58,6 +58,7 @@ while(intentos>cont && barrabaja!=0){
   console.log(j);
 
   //comprobar si se ha acertado
+  barrabaja=0;
   preguntar=false;
   for (let i=0; i<=adivinar.length-1; i++){
     if(palabra[i]=="_") barrabaja=barrabaja+1;
