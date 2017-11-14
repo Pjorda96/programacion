@@ -12,12 +12,14 @@
   <body>
     <h1 style="background-color: #55B0FF">Bienvenido al ahorcado</h1>
     <form id="formularioPrueba" action="#" method="post">
-      <p id="dibu" value="" readonly></p>
-      <p><input type="text"  size=5 id="entrada" value=""></p>
-      <p id="fallos" value="" readonly></p>
-      <p id="contador" value="" readonly></p>
-      <input type="submit" value="Comprobar">
+      <div><p id="dibu" value=""></p></div>
+      <div>Introduce una letra: <br>
+      <input type="text"  size=4 id="entrada" value="">
+      <input type="text" name="comprobante" value="" readonly> </div>
+      <div><p id="fallos" value=""></p>
+      <p id="resultado" value=""></p></div>
+      <p><button type="submit" name="Comprobar" onclick="comprobar()">Comprobar</button></p>
     </form>
-    <script type="text/javascript" src=js/script0.js></script></p>
+    <script type="text/javascript" src=js/script04.js></script></p>
   </body>
 </html>
