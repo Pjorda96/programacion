@@ -23,9 +23,9 @@ function comprobar(){
     }else{
       fallo=fallo+letra;
       fallos.value=fallo;
-      cont++
+      cont++;
     }
-    comp=false
+    comp=false;
 
   //mostrar array
     var j="";
@@ -78,5 +78,5 @@ var fallo="";
 var entradaLetra=document.getElementById('entrada');
 var letra = "";
 var fallos=document.getElementById('fallos');
-var palabraIncompleta=document.getElementById('comprobante');
+var comprobante=document.getElementById('comprobante');
 var resultado=document.getElementById('resultado');
