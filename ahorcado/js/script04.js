@@ -4,6 +4,7 @@ function comprobar(){
   if(intentos>cont && barrabaja!=0){
   //pedir letra y comprobar si letra
   letra=entrada.value;
+  entrada.value="";
     /*while (isNaN(letra)==false){
       letra=prompt("Introduce una letra");
     }
@@ -22,8 +23,10 @@ function comprobar(){
       console.log(letra);
     }else{
       fallo=fallo+letra;
-      fallos.value=fallo;
+      fallos.textContent=fallo;
       cont++;
+
+      intentado.textContent="Llevas "+cont+" intentos.";
     }
     comp=false;
 
@@ -79,4 +82,5 @@ var entradaLetra=document.getElementById('entrada');
 var letra = "";
 var fallos=document.getElementById('fallos');
 var comprobante=document.getElementById('comprobante');
+var intentado=document.getElementById('intentos');
 var resultado=document.getElementById('resultado');
