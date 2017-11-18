@@ -60,7 +60,7 @@ var adivinar=palabras[numAl];
 console.log(adivinar);
 
 //contador
-var intentos=5;
+var intentos=9;
 var cont=0;
 
 //array de la palabra a palabraAcertar
