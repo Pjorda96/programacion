@@ -1,0 +1,7 @@
+bg.jpg //fondo
+loading.gif 
+logo.jpg //logo
+map.png //logo de arriba
+menu.png //
+pp.png //foto personal
+twke.png //firma
