@@ -47,7 +47,7 @@
 				<h2 class="logo">PJ</h2>
 				<div class="menu-content">
 					<ul>
-						<li><a class="active" href="#" data-value="sobre-mi">SOBRE MI</a></li>
+						<li><a class="active" href="#" data-value="sobre-mi">SOBRE MÍ</a></li>
 						<li><a href="#" data-value="competencias" class="">COMPETENCIAS</a></li>
 						<li><a href="#" data-value="educación" class="">EDUCACIÓN</a></li>
 						<!--<li><a href="#" data-value="experiencia" class="">EXPERIENCIA</a></li>-->
@@ -55,7 +55,7 @@
 						<!--<li><a href="#" data-value="tarifa" class="">TARIFA</a></li>-->
 						<li><a href="#" data-value="referencias" class="">REFERENCIAS</a></li>
 						<li><a href="#" data-value="intereses" class="">INTERESES</a></li>
-						<li><a href="#" data-value="blog" class="">BLOG</a></li>
+						<!--<li><a href="#" data-value="blog" class="">BLOG</a></li>-->
 						<li><a href="#" data-value="contacto">CONTACTO</a></li>
 					</ul>
 				</div>
@@ -118,7 +118,7 @@
 						<div class="row">
 							<div class="col-sm-4">
 								<div class="photo-profile">
-									<img src="pablo.jpg" alt="Pablo Jordá">
+									<img src="images/pablo.jpg" alt="Pablo Jordá">
 								</div>
 								<a href="CV-Europass-20170630-JordáGarcía-ES.pdf" target="cv">
 									<div class="download-resume">
@@ -188,10 +188,10 @@
 												<li class="li-social-links">
 													<a href="#" data-tootik="Linkedin" data-tootik-conf="square"><i class="fa fa-linkedin" aria-hidden="true" target="_blank"></i></a>
 												</li>
-												<!--
 												<li class="li-social-links">
 													<a href="https://github.com/Pjorda96" data-tootik="Github" data-tootik-conf="square" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
 												</li>
+												<!--
 												<li class="li-social-links">
 													<a href="#" data-tootik="Google Plus" data-tootik-conf="square"><i class="fa fa-google-plus" aria-hidden="true" target="_blank"></i></a>
 												</li>
@@ -756,9 +756,9 @@
 				            </div>
 										<div class="swiper-slide" style="width: 136.667px; margin-right: 30px;">
 				            	<div>
-				            		<img src="images/icons/movies_icon.png" alt="Película">
+				            		<img src="images/icons/movies_icon.png" alt="Cine">
 				            	</div>
-				            	<h4>Película</h4>
+				            	<h4>Cine</h4>
 										</div>
 				            <div class="swiper-slide swiper-slide-next" style="width: 136.667px; margin-right: 30px;">
 				            	<div>
@@ -770,6 +770,7 @@
 				    </div>
 				</section>
 				<!-- #BLOG# -->
+				<!-- PROXIMAMENTE
 				<section id="blog" class="section section-blog wow fadeInUp" data-wow-offset="40" style="visibility: visible; animation-name: fadeInUp;">
 					<div class="header-section">
 						<h2 class="h2-section">BLOG</h2>
@@ -812,20 +813,22 @@
 						<a href="/more-blog"><span>LOAD MORE</span></a>
 					</div>
 				</section>
+				-->
 				<!-- #CONTACT_US# -->
 				<section id="contacto" class="section section-contact-us wow fadeInUp" data-wow-offset="40" style="visibility: visible; animation-name: fadeInUp;">
 					<div class="header-section">
-						<h2 class="h2-section">CONTACT US</h2>
+						<h2 class="h2-section">CONTACTO</h2>
 					</div>
 					<div class="row">
 						<div class="col-sm-7">
 							<div class="form-content">
-								<h3>LET'S HAVE A FUN</h3>
-								<form id="contactForm" data-toggle="validator" method="post" novalidate="true"><input type="hidden" name="form-name" value="contactForm">
-									<input type="text" id="name" placeholder="Name" required="">
-									<input type="email" id="email" placeholder="Email" required="">
-									<textarea id="message" placeholder="Message" required=""></textarea>
-									<input type="submit" id="form-submit" value="SEND" class="disabled" style="pointer-events: all; cursor: pointer;">
+								<h3>MÁNDAME UN MAIL</h3>
+								<form id="contactForm" data-toggle="validator" method="post" novalidate="true" action="send.php">
+									<input type="hidden" name="form-name" value="contactForm">
+									<input type="text" id="nombre" placeholder="NOMBRE" required="">
+									<input type="email" id="email" placeholder="EMAIL" required="">
+									<textarea id="mensaje" placeholder="MENSAJE" required=""></textarea>
+									<input type="submit" id="form-submit" value="ENVIAR" class="enabled" style="pointer-events: all; cursor: pointer;">
 									<div id="msgSubmit" class="h3 text-center hidden"></div>
             						<div class="clearfix"></div>
 								</form>
@@ -833,34 +836,33 @@
 						</div>
 						<div class="col-sm-5">
 							<div class="info-content">
-								<h3>KEEP IN TOUCHE</h3>
+								<h3>MANTENTE EN CONTACTO</h3>
 								<div class="address">
 									<span class="info-icon"><i class="fa fa-map-marker"></i></span>
-									<span class="info-text">6235, London, Earth, BE 45</span>
+									<span class="info-text">Valencia, España</span>
 								</div>
 								<div class="email">
 									<span class="info-icon"><i class="fa fa-envelope"></i></span>
-									<span class="info-text">robertsmith@gmail.com</span>
+									<span class="info-text">pjorda96@gmail.com</span>
 								</div>
 								<div class="telephone">
 									<span class="info-icon"><i class="fa fa-phone"></i></span>
-									<span class="info-text">+123 456 789 012</span>
+									<span class="info-text">667752871</span>
 								</div>
 								<div class="website">
 									<span class="info-icon"><i class="fa fa-link"></i></span>
-									<span class="info-text">www.robertsmith.com</span>
+									<span class="info-text">www.pablo_jorda.com</span>
 								</div>
 							</div>
 						</div>
 					</div>
 					<div class="social-links">
 						<ul>
-							<li><a href="#"><i class="fa fa-facebook"></i></a></li>
-							<li><a href="#"><i class="fa fa-twitter"></i></a></li>
-							<li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-							<li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-							<li><a href="#"><i class="fa fa-pinterest-p"></i></a></li>
-							<li><a href="#"><i class="fa fa-behance"></i></a></li>
+							<li><a href="#" target="_blank"><i class="fa fa-facebook"></i></a></li>
+							<li><a href="#" target="_blank"><i class="fa fa-twitter"></i></a></li>
+							<li><a href="#" target="_blank"><i class="fa fa-instagram"></i></a></li>
+							<li><a href="#" target="_blank"><i class="fa fa-linkedin"></i></a></li>
+							<li><a href="https://github.com/Pjorda96" target="_blank"><i class="fa fa-github"></i></a></li>
 						</ul>
 					</div>
 				</section>
