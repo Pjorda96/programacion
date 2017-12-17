@@ -1,6 +1,6 @@
 body{
-    scrollbar-base-color: #07cb79;
-    scrollbar-base-color: #07cb79;
+    scrollbar-base-color: #37b6bd;
+    scrollbar-base-color: #37b6bd;
 }
 
 ::selection,
@@ -18,7 +18,7 @@ body{
 .toolbar .btn:focus,
 .toast
 {
-    background-color: #07cb79;
+    background-color: #37b6bd;
 }
 a:focus, a:hover,
 input, textarea,
@@ -40,30 +40,30 @@ figure.effect-winston a:focus,
 .comments-counter a,
 a.goto-top span
 {
-    color: #07cb79;
+    color: #37b6bd;
 }
 input:focus, textarea:focus{
-    border-bottom: 1px solid #07cb79 !important;
+    border-bottom: 1px solid #37b6bd !important;
 }
 .btn-primary,
 .btn-primary:hover,
 .profile-img,
 .widget-tags li a:hover{
-    border-color: #07cb79;
+    border-color: #37b6bd;
 }
 .nav-sidebar > .active > a, .nav-sidebar > .active > a:focus, .nav-sidebar > .active > a:hover, .nav-sidebar > li > a:hover ,.nav-sidebar > .active > a, .nav-sidebar > .active > a:hover, .nav-sidebar > .active > a:focus{
-    box-shadow: 15px 0px 0px 0px #07cb79 inset !important;
+    box-shadow: 15px 0px 0px 0px #37b6bd inset !important;
 }
 .section-title h4{
-    border: 2px solid #07cb79;
+    border: 2px solid #37b6bd;
 }
 @media(min-width:1170px){
     .timeline-container .timeline-block .timeline-content:before{
-        border-left-color:#07cb79;
+        border-left-color:#37b6bd;
     }
 }
 @media(min-width:1170px){
     .timeline-container .timeline-block:nth-child(even) .timeline-content::before{
-        border-right-color:#07cb79;
+        border-right-color:#37b6bd;
     }
 }
