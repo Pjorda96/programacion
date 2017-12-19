@@ -34,7 +34,7 @@
 </style>
   </head>
   <body>
-    <?php $pantalla="home";
+    <?php $pantalla="news";
     ?>
     <ul>
       <li><a class="<?php if ($pantalla=="home") echo "active";?>" href="index.php">Home</a></li>
@@ -42,9 +42,8 @@
       <li><a class="<?php if ($pantalla=="contact") echo "active";?>" href="contact.php">Contact</a></li>
       <li style="float:right"><a href="#about">About</a></li>
     </ul>
-    <h1>AMUNT VALENCIA</h1>
-    <b>Soy blanc-i-negre</b></br>
-
+    <h1>El Valencia gana la liga</h1>
+    <p>El valencia ganan la liga por tercer año consecutivo y el Madrid queda al borde del descenso.</p>
 
   </body>
 </html>

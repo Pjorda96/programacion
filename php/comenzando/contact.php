@@ -34,7 +34,7 @@
 </style>
   </head>
   <body>
-    <?php $pantalla="home";
+    <?php $pantalla="contact";
     ?>
     <ul>
       <li><a class="<?php if ($pantalla=="home") echo "active";?>" href="index.php">Home</a></li>
@@ -42,9 +42,7 @@
       <li><a class="<?php if ($pantalla=="contact") echo "active";?>" href="contact.php">Contact</a></li>
       <li style="float:right"><a href="#about">About</a></li>
     </ul>
-    <h1>AMUNT VALENCIA</h1>
-    <b>Soy blanc-i-negre</b></br>
-
+    <h1>CONTACTA CON NOSOTROS</h1>
 
   </body>
 </html>
