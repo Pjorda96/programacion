@@ -18,6 +18,4 @@ $asunto = 'Contacto CV';
 
 mail($para, $asunto, utf8_decode($mensaje), $header);
 
-echo 'mensaje enviado correctamente';
-
 ?>
