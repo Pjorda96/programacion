@@ -24,7 +24,7 @@
       </div>
       <div class="w3-card-4" style="width:50%;">
         <header class="w3-container w3-blue">
-          <h1>For</h1>
+          <h1>While</h1>
         </header>
         <div class="w3-container">
           <p>
@@ -40,7 +40,7 @@
       </div>
       <div class="w3-card-4" style="width:50%;">
         <header class="w3-container w3-blue">
-          <h1>For</h1>
+          <h1>Do-While</h1>
         </header>
         <div class="w3-container">
           <p>
