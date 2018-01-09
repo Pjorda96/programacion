@@ -48,17 +48,38 @@
         }
         echo "<br>";
       }
-      for ($i=2; $i >= 0; $i--) {
+      for ($i=2; $i > 1; $i--) {
         echo "*";
-        for ($j=4; $j >= ($i/2); $j--) {
+        for ($j=2; $j >= 1; $j--) {
           echo "*";
         }
         echo "<br>";
       }
+      echo "*"."<br>";
       ?>
+      <!-- Tengo que intentarlo con recursividad -->
     </div>
     <div class="fig5">
-
+      <h4>Figura 5: Normal</h4>
+      <?php
+      $k=5;
+      for ($i=1; $i <= $k; $i++) {
+        for ($j=1; $j <= ($k-$i); $j++) {
+          echo "_";
+        }
+        for ($j=1; $j < $i; $j++) {
+          echo "*";
+        }
+        echo "*";
+        for ($j=1; $j < $i; $j++) {
+          echo "*";
+        }
+        for ($j=1; $j <= ($k-$i); $j++) {
+          echo "_";
+        }
+        echo "<br>";
+      }
+      ?>
     </div>
   </body>
 </html>
