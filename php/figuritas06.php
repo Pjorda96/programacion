@@ -57,7 +57,7 @@
       }
       echo "*"."<br>";
       ?>-->
-      <!-- Tengo que intentarlo con recursividad -->
+      <!-- Done -->
       <?php
       function figuraPCagarse($j,$h){
         for ($i=0; $i < $j; $i++) {
