@@ -40,7 +40,7 @@
     </div>
     <div class="fig4">
       <h4>Figura 4: Normal</h4>
-      <?php
+      <!--<?php
       for ($i=0; $i <= 2; $i++) {
         echo "*";
         for ($j=1; $j <= ($i*2); $j++) {
@@ -56,8 +56,23 @@
         echo "<br>";
       }
       echo "*"."<br>";
-      ?>
+      ?>-->
       <!-- Tengo que intentarlo con recursividad -->
+      <?php
+      function figuraPCagarse($j,$h){
+        for ($i=0; $i < $j; $i++) {
+          echo "*";
+        }
+        echo "<br>";
+        if($h<2) figuraPCagarse($i+2,$h+1);
+        else if ($h==2) echo "*****"."<br>";
+        for ($i=0; $i < $j; $i++) {
+          echo "*";
+        }
+        echo "<br>";
+      }
+      figuraPCagarse(1,1);
+      ?>
     </div>
     <div class="fig5">
       <h4>Figura 5: Normal</h4>
@@ -65,7 +80,7 @@
       $k=5;
       for ($i=1; $i <= $k; $i++) {
         for ($j=1; $j <= ($k-$i); $j++) {
-          echo "_";
+          echo "&nbsp&nbsp;";
         }
         for ($j=1; $j < $i; $j++) {
           echo "*";
@@ -75,7 +90,7 @@
           echo "*";
         }
         for ($j=1; $j <= ($k-$i); $j++) {
-          echo "_";
+          echo "&nbsp&nbsp;";
         }
         echo "<br>";
       }
