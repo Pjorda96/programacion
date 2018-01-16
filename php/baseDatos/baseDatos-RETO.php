@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Chorrada paises</title>
+    <title>Base Datos RETO</title>
   </head>
   <body>
     <?php
@@ -12,19 +12,12 @@
     } else {
       //interactuar con la base de datos
       echo "<h1>Paises del mundo</h1>";
-      $resultado = $conector->query("SELECT * FROM country");
+      $resultado = $conector->query("SELECT Name,SurfaceArea FROM country where Continent='South America' order by SurfaceArea desc");
       echo "El numero de paises es: ".$resultado->num_rows."<br>";
-  	  while($fila=$resultado->fetch_assoc()){
-    	  echo "El nombre es ".$fila['Name']."<br>";
-  	  }
-      echo "<h2>Con foreach()</h2>";
       foreach ($resultado as $fila) {
-        echo "El nombre es ".$fila['Name']."<br>";
+        echo "Pais: ".$fila['Name']." ".$fila['SurfaceArea']." km^2"."<br>";
       }
     }
-    ?>
-    <?php
-
     ?>
   </body>
 </html>
