@@ -6,7 +6,7 @@ if ($world->connect_errno) {
   //interactuar con la base de datos
   $resultado = $world->query("select Name, SurfaceArea from country order by SurfaceArea desc");
 ?>
-  new Morris.Line({
+  new Morris.Bar({
     // ID of the element in which to draw the chart.
     element: 'paisesMundo',
     // Chart data records -- each entry in this array corresponds to a point on
