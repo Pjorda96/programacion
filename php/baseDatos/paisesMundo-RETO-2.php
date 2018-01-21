@@ -30,6 +30,20 @@
       li a:hover:not(.active) {
           background-color: #111;
       }
+      .active {
+          background-color: #4CAF50;
+      }
+      .column {
+        float: left;
+        padding: 10px;
+        height: 30px;
+      }
+      .left {
+        width: 25%;
+      }
+      .right {
+        width: 75%;
+      }
     </style>
   </head>
   <body>
@@ -47,16 +61,19 @@
       //interactuar con la base de datos
       echo "<h1>Paises del mundo</h1>";
       echo "<h3>Ordenados por Superficie</h3>";
-      $resultado = $world->query("select city.Name,city.Population from city join country on city.CountryCode=country.Code where country.Name like '%Jap%'");
+      $resultado = $world->query("select city.Name, city.Population from city join country on city.CountryCode=country.Code where country.Name like '%Jap%'");
       foreach ($resultado as $fila) {
       ?>
       <div>
-        <?=$fila['Name']?>
+        <div class='column left' style='background-color:#aaa;'>
+          <?=$fila['Name']?>
+        </div>
+        <div class='column right' style='background-color:#bbb;'>
+          <?=$fila['Population']?>
+        </div>
       </div>
-      <div>
-        <?=$fila['SurfaceArea']?>
-      </div>
-      <?php } ?>
+      <?php }
     }
+    ?>
   </body>
 </html>

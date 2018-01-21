@@ -30,11 +30,24 @@
       li a:hover:not(.active) {
           background-color: #111;
       }
+      .active {
+          background-color: #4CAF50;
+      }
+      .column {
+        float: left;
+        padding: 10px;
+        height: 30px;
+      }
+      .left {
+        width: 25%;
+      }
+      .right {
+        width: 75%;
+      }
     </style>
   </head>
   <body>
-    <?php $pantalla="superficie";
-    ?>
+    <?php $pantalla="superficie"; ?>
     <ul>
       <li><a class="<?php if ($pantalla=="superficie") echo "active";?>" href="paisesMundo-RETO.php">Superficie</a></li>
       <li><a class="<?php if ($pantalla=="jap") echo "active";?>" href="paisesMundo-RETO-2.php">Japón</a></li>
@@ -47,16 +60,19 @@
       //interactuar con la base de datos
       echo "<h1>Paises del mundo</h1>";
       echo "<h3>Ordenados por Superficie</h3>";
-      $resultado = $world->query("select Name,SurfaceArea from country order by SurfaceArea desc");
+      $resultado = $world->query("select Name, SurfaceArea from country order by SurfaceArea desc");
       foreach ($resultado as $fila) {
-      ?>
-        <div>
-          <?=$fila['Name'];?>
+    ?>
+      <div>
+        <div class='column left' style='background-color:#aaa;'>
+          <?=$fila['Name']; ?>
         </div>
-        <div>
-          <?=$fila['SurfaceArea'];?>
+        <div class='column right' style='background-color:#bbb;'>
+          <?=$fila['SurfaceArea']; ?>
         </div>
-      <?php } ?>
+      </div>
+      <?php }
     }
+    ?>
   </body>
 </html>
