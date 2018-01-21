@@ -45,6 +45,10 @@
         width: 75%;
       }
     </style>
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.css">
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.min.js"></script>
   </head>
   <body>
     <?php $pantalla="superficie"; ?>
@@ -52,27 +56,11 @@
       <li><a class="<?php if ($pantalla=="superficie") echo "active";?>" href="paisesMundo-RETO.php">Superficie</a></li>
       <li><a class="<?php if ($pantalla=="jap") echo "active";?>" href="paisesMundo-RETO-2.php">Japón</a></li>
     </ul>
-    <?php
-    $world=new mysqli("localhost","root","","world");
-    if ($world->connect_errno) {
-      echo "Fallo al conectar a MySQL: " . $world->connect_error;
-    } else {
-      //interactuar con la base de datos
-      echo "<h1>Paises del mundo</h1>";
-      echo "<h3>Ordenados por Superficie</h3>";
-      $resultado = $world->query("select Name, SurfaceArea from country order by SurfaceArea desc");
-      foreach ($resultado as $fila) {
-    ?>
-      <div>
-        <div class='column left' style='background-color:#aaa;'>
-          <?=$fila['Name']; ?>
-        </div>
-        <div class='column right' style='background-color:#bbb;'>
-          <?=$fila['SurfaceArea']; ?>
-        </div>
-      </div>
-      <?php }
-    }
-    ?>
+    <h1>Paises del mundo</h1>
+    <h3>Ordenados por Superficie</h3>
+    <div id="myfirstchart" style="height: 250px;">
+
+    </div>
+    <script type="text/javascript" src="script07-RETO.js"></script>
   </body>
 </html>

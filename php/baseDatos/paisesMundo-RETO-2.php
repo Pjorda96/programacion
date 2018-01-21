@@ -45,6 +45,10 @@
         width: 75%;
       }
     </style>
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.css">
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.min.js"></script>
   </head>
   <body>
     <?php $pantalla="jap";
@@ -60,11 +64,12 @@
     } else {
       //interactuar con la base de datos
       echo "<h1>Paises del mundo</h1>";
-      echo "<h3>Ordenados por Superficie</h3>";
+      echo "<h3>Ciudades de Japón por población</h3>";
       $resultado = $world->query("select city.Name, city.Population from city join country on city.CountryCode=country.Code where country.Name like '%Jap%'");
       foreach ($resultado as $fila) {
       ?>
       <div>
+
         <div class='column left' style='background-color:#aaa;'>
           <?=$fila['Name']?>
         </div>
