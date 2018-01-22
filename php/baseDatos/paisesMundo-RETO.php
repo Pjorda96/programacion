@@ -59,8 +59,7 @@
     <h1>Paises del mundo</h1>
     <h3>Ordenados por Superficie</h3>
     <div id="myfirstchart" style="height: 250px;">
-
+      <script type="text/javascript" src="script07-RETO.js"></script>
     </div>
-    <script type="text/javascript" src="script07-RETO.js"></script>
   </body>
 </html>

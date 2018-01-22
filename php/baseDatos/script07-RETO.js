@@ -14,26 +14,19 @@ if ($world->connect_errno) {
     data: [
       <?php
       foreach ($resultado as $fila) {
-        echo"{ y: <?=$fila['Name']; ?>, a: 100, b: 90 },";
+        echo"{ y: <?=$fila['Name']; ?>, a: <?=$fila['SurfaceArea']; ?>},";
       ?>
-      { y: '2012', a: 100, b: 90 }
+      { y: 'hola', a: 100}
     ],
     // The name of the data record attribute that contains x-values.
     xkey: <?=$fila['Name']; ?>,
     // A list of names of data record attributes that contain y-values.
-    ykeys: [$world->query("select max(SurfaceArea) from country"),
-      $world->query("select min(SurfaceArea) from country")],
+    ykeys: [<?=$world->query("select max(SurfaceArea) from country")?>,
+      <?=$world->query("select min(SurfaceArea) from country")?>],
     // Labels for the ykeys -- will be displayed when you hover over the
     // chart.
-    labels: ['Series A', 'Series B']
+    labels: ['Área']
   });
-
-    /*<div class='column left' style='background-color:#aaa;'>
-      <?=$fila['Name']; ?>
-    </div>
-    <div class='column right' style='background-color:#bbb;'>
-      <?=$fila['SurfaceArea']; ?>
-    </div>*/
 <?php
 }
 ?>

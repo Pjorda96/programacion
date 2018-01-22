@@ -57,28 +57,10 @@
       <li><a class="<?php if ($pantalla=="superficie") echo "active";?>" href="paisesMundo-RETO.php">Superficie</a></li>
       <li><a class="<?php if ($pantalla=="jap") echo "active";?>" href="paisesMundo-RETO-2.php">Japón</a></li>
     </ul>
-    <?php
-    $world=new mysqli("localhost","root","","world");
-    if ($world->connect_errno) {
-      echo "Fallo al conectar a MySQL: " . $world->connect_error;
-    } else {
-      //interactuar con la base de datos
-      echo "<h1>Paises del mundo</h1>";
-      echo "<h3>Ciudades de Japón por población</h3>";
-      $resultado = $world->query("select city.Name, city.Population from city join country on city.CountryCode=country.Code where country.Name like '%Jap%'");
-      foreach ($resultado as $fila) {
-      ?>
-      <div>
-
-        <div class='column left' style='background-color:#aaa;'>
-          <?=$fila['Name']?>
-        </div>
-        <div class='column right' style='background-color:#bbb;'>
-          <?=$fila['Population']?>
-        </div>
-      </div>
-      <?php }
-    }
-    ?>
+    <h1>Ciudades de Japón</h1>
+    <h3>Ordenados por Población</h3>
+    <div id="myfirstchart" style="height: 250px;">
+      <script type="text/javascript" src="script07-RETO-2.js"></script>
+    </div>
   </body>
 </html>
