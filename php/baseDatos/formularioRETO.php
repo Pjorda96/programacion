@@ -12,16 +12,17 @@
       echo "Fallo al conectar a MySQL: " . $world->connect_error;
     } else {
       echo "Conectado a la DB"."<br>";
-      if (empty($_POST['SurfaceArea'])) $_POST['SurfaceArea']=0;
+      if (empty($_POST['SurfaceArea'])) $_POST['SurfaceArea']='0';
       if (empty($_POST['Continent'])) {
-        $resultado = $world->query("select Name from country where Continent='".$_POST['Continent']."'");
+        $resultado = $world->query("select Name from country where SurfaceArea>'".$_POST['SurfaceArea']."'");
         foreach ($resultado as $fila) {
           echo "Un pais de esas características es: ".$fila['Name']."<br>";
         }
-      }
-      $resultado = $world->query("select Name from country where Continent='".$_POST['Continent']."' and SurfaceArea>'".$_POST['SurfaceArea']."'");
-      foreach ($resultado as $fila) {
-        echo "Un pais de esas características es: ".$fila['Name']."<br>";
+      } else {
+        $resultado = $world->query("select Name from country where Continent='".$_POST['Continent']."' and SurfaceArea>'".$_POST['SurfaceArea']."'");
+        foreach ($resultado as $fila) {
+          echo "Un pais de esas características es: ".$fila['Name']."<br>";
+        }
       }
     }
     ?>
