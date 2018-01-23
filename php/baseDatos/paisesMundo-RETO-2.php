@@ -60,7 +60,18 @@
     <h1>Ciudades de Japón</h1>
     <h3>Ordenados por Población</h3>
     <div id="myfirstchart" style="height: 250px;">
+      <?php
+      $world=new mysqli("localhost","root","","world");
+      if ($world->connect_errno) {
+        echo "Fallo al conectar a MySQL: " . $world->connect_error;
+      } else {
+        //interactuar con la base de datos
+        $resultado = $world->query("select Name, Population from city join country on city.CountryCode=country.Code where country.Name like '%Jap%'");
+      ?>
       <script type="text/javascript" src="script07-RETO-2.js"></script>
+      <?php
+      }
+      ?>
     </div>
   </body>
 </html>

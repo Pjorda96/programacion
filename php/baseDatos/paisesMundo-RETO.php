@@ -59,7 +59,18 @@
     <h1>Paises del mundo</h1>
     <h3>Ordenados por Superficie</h3>
     <div id="myfirstchart" style="height: 250px;">
+      <?php
+      $world=new mysqli("localhost","root","","world");
+      if ($world->connect_errno) {
+        echo "Fallo al conectar a MySQL: " . $world->connect_error;
+      } else {
+        //interactuar con la base de datos
+        $resultado = $world->query("select Name, SurfaceArea from country order by SurfaceArea desc");
+      ?>
       <script type="text/javascript" src="script07-RETO.js"></script>
+      <?php
+      }
+      ?>
     </div>
   </body>
 </html>
