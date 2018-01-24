@@ -13,8 +13,9 @@ new Morris.Bar({
   // The name of the data record attribute that contains x-values.
   xkey: <?=$fila['Name']; ?>,
   // A list of names of data record attributes that contain y-values.
-  ykeys: [<?=$world->query("select max(SurfaceArea) from country")?>,
-    <?=$world->query("select min(SurfaceArea) from country")?>],
+  var a= <?=$world->query("select max(SurfaceArea) from country")?>;
+  var b= <?=$world->query("select min(SurfaceArea) from country")?>;
+  ykeys: [a,b],
   // Labels for the ykeys -- will be displayed when you hover over the
   // chart.
   labels: ['Área']
