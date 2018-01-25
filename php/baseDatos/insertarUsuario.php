@@ -36,7 +36,7 @@
         <input type="radio" name="gusto" value="">Claro, es un clásico atemporal que [bla bla bla] y me va a encantar.</p>
         <p><input type="checkbox" name="acuerdo" value="">Acepto jugar sin trampas e intentar mejorar dia a dia.</p>
       </fieldset>
-      <input type="submit" name="crear" value="Crear cuenta" onclick="<?=crear()?>">
+      <input type="submit" name="crear" value="Crear cuenta" onclick="">
     </form>
     <button type="button" name="button" onclick="location.href='listadoUsuarios.php'">Volver</button>
   </body>
