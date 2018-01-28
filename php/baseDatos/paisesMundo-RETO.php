@@ -49,6 +49,9 @@
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
   </head>
   <body>
     <?php $pantalla="superficie"; ?>
@@ -70,24 +73,20 @@
       ?>
     </div>
     <script type="text/javascript">
-    new Morris.Bar({
+    Morris.Bar({
       // ID of the element in which to draw the chart.
       element: 'paisesMundo',
       // Chart data records -- each entry in this array corresponds to a point on
       // the chart.
       data: [
-        <?php
-        foreach ($resultado as $fila) {
-          echo"{ y: '<?=$fila['Name']; ?>', a: '<?=$fila['SurfaceArea']; ?>'},";
-        ?>
-        { y: 'hola', a: 100}
+        <?php foreach($resultado as $fila):?>
+          { y: '<?=$fila['Name']?>', a: <?=$fila['SurfaceArea']?>},
+        <?php endforeach; ?>
       ],
       // The name of the data record attribute that contains x-values.
-      xkey: <?=$fila['Name']; ?>,
+      xkey: 'y',
       // A list of names of data record attributes that contain y-values.
-      var a= <?=$world->query("select max(SurfaceArea) from country")?>;
-      var b= <?=$world->query("select min(SurfaceArea) from country")?>;
-      ykeys: [a,b],
+      ykeys: ['a'],
       // Labels for the ykeys -- will be displayed when you hover over the
       // chart.
       labels: ['Área']
