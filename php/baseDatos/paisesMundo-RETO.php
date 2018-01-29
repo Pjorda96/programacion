@@ -49,10 +49,6 @@
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.min.js"></script>
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
-  </head>
   <body>
     <?php $pantalla="superficie"; ?>
     <ul>
@@ -61,18 +57,17 @@
     </ul>
     <h1>Paises del mundo</h1>
     <h3>Ordenados por Superficie</h3>
-    <div id="myfirstchart" style="height: 250px;">
-      <?php
-      $world=new mysqli("localhost","root","","world");
-      if ($world->connect_errno) {
-        echo "Fallo al conectar a MySQL: " . $world->connect_error;
-      } else {
-        //interactuar con la base de datos
-        $resultado = $world->query("select Name, SurfaceArea from country order by SurfaceArea desc");
-      }
-      ?>
-    </div>
-    <script type="text/javascript">
+    <?php
+    $world=new mysqli("localhost","root","","world");
+    if ($world->connect_errno) {
+      echo "Fallo al conectar a MySQL: " . $world->connect_error;
+    } else {
+      //interactuar con la base de datos
+      $resultado = $world->query("select Name, SurfaceArea from country order by SurfaceArea desc");
+    }
+    ?>
+    <div id="paisesMundo" style="height: 250px;"></div>
+    <script>
     Morris.Bar({
       // ID of the element in which to draw the chart.
       element: 'paisesMundo',
