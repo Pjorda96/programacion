@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <title>Listado de Usuarios</title>
-    <link rel="stylesheet" href="listado.css">
+    <link rel="stylesheet" href="perfilUsuario.css">
   </head>
   <body>
     <h1>BIENVENIDO AL AHORCADO</h1>

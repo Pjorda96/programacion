@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <title>Registro</title>
-    <link rel="stylesheet" href="registro.css">
+    <link rel="stylesheet" href="perfilUsuario.css">
   </head>
   <body>
     <h1>CREAR PERFIL</h1>
@@ -12,16 +12,23 @@
         <legend>¿QUIEN ERES?</legend>
         <p>Nombre <br>
         <input type="text" name="nombre" value="" placeholder="Introduce tu nombre"></p>
-        <p>Apellidos <br>
+        <p>Apellidos <strong>*</strong><br>
           <input type="text" name="apellidos" value="" placeholder="Introduce tus apellidos"></p>
         <p>Fecha de nacimiento: <br>
         <input type="date" name="date"></p>
         <p>Curso <br>
-          <input type="text" name="curso" value="" placeholder="Introduce tu curso"></p>
+          <select name="curso" placeholder="Introduce tu curso">
+            <option value="">--Selecciona uno--</option>
+            <option value="2daw">2º DAW</option>
+            <option value="1daw">1º DAW</option>
+            <option value="bachiller">Bachiller</option>
+            <option value="eso">ESO</option>
+            <option value="primaria">Primaria</option>
+          </select></p>
       </fieldset>
       <fieldset class="caja">
         <legend>¿CÓMO QUIERES INICIAR SESIÓN?</legend>
-        <p>Nombre de usuario <br>
+        <p>Nombre de usuario <strong>*</strong><br>
           <input type="text" name="usuario" value="" placeholder="Introduce tu usuario"></p>
         <p>Contraseña <br>
           <input type="password" name="contrasenya" value="" placeholder="Introduce tu contraseña"></p>
@@ -36,7 +43,7 @@
         <input type="radio" name="gusto" value="">Claro, es un clásico atemporal que [bla bla bla] y me va a encantar.</p>
         <p><input type="checkbox" name="acuerdo" value="">Acepto jugar sin trampas e intentar mejorar dia a dia.</p>
       </fieldset>
-      <input type="submit" name="crear" value="Crear cuenta" onclick="">
+      <input type="submit" name="crear" value="Crear cuenta" onclick="location.href='insertarPost.php'">
     </form>
     <button type="button" name="button" onclick="location.href='listadoUsuarios.php'">Volver</button>
   </body>
