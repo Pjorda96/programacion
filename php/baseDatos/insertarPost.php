@@ -6,6 +6,6 @@
   </head>
   <body>
     <h1>Cargando</h1>
-    <img src="bingo.gif" alt="bingoMovimiento">
+    <img src="loading.gif" alt="loading">
   </body>
 </html>
