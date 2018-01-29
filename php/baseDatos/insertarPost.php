@@ -3,9 +3,13 @@
   <head>
     <meta charset="utf-8">
     <title>loading</title>
+    <style media="screen">
+      *{
+        background-color: lightblue;
+      }
+    </style>
   </head>
   <body>
-    <h1>Cargando</h1>
     <img src="loading.gif" alt="loading">
   </body>
 </html>
