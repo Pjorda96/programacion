@@ -8,7 +8,7 @@
   <body>
     <h1>BIENVENIDO AL AHORCADO</h1>
     <br><br>
-    <div class="">
+    <div>
       <!--formulario para elegir usuario existente-->
       <fielset class="seleccionar">
         <legend>Selecciona tu usuario.</legend>

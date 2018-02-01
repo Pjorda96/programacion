@@ -15,12 +15,6 @@ input:hover ,select:hover{
 input:focus ,select:focus{
   background-color: lightblue;
 }
-.seleccionar{
-  float: left;
-}
-.crear{
-  float: right;
-}
 legend{
   font-weight: bold;
   text-transform: uppercase;
@@ -30,4 +24,10 @@ p{
 }
 b{
   color: red;
+}
+.seleccionar{
+  float: left;
+}
+.crear{
+  float: right;
 }

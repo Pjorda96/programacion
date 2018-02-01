@@ -1,20 +1,3 @@
-<?php
-if (empty($_POST["apellidos"])) $_POST["apellidos"]="";
-if (empty($_POST["date"])) $_POST["date"]=2018;
-if (empty($_POST["contrasenya"])) $_POST["contrasenya"]="";
-if (empty($_POST["curso"])) $_POST["curso"]="";
-
-$juegos=new mysqli("localhost","root","","juegos");
-if ($registro->connect_errno) {
-  echo "Fallo al conectar a MySQL: " . $juegos->connect_error;
-} else {
-  $registro = $juegos->query("use juegos; insert into usuarios
-  (nombre,apellidos,usuario,contrasenya,edad,curso)
-  values ('".$_POST['nombre']."','".$_POST['apellidos']."',
-  '".$_POST['usuario']."','".$_POST['contrasenya']."',".$_POST['edad'].",
-  '".$_POST['curso']."')");
-}
-?>
 <!DOCTYPE html>
 <html>
   <head>
@@ -24,15 +7,15 @@ if ($registro->connect_errno) {
   </head>
   <body>
     <h1>CREAR PERFIL</h1>
-    <form action="listadoUsuarios.php" method="post">
+    <form action="insertarPOST.php" method="post">
       <fieldset class="caja">
         <legend>¿QUIEN ERES?</legend>
         <p>Nombre <b>*</b><br>
-        <input type="text" name="nombre" value="" placeholder="Introduce tu nombre"></p>
+        <input type="text" name="nombre" value="" placeholder="Introduce tu nombre" required></p>
         <p>Apellidos <br>
           <input type="text" name="apellidos" value="" placeholder="Introduce tus apellidos"></p>
         <p>Fecha de nacimiento: <br>
-        <input type="date" name="date"></p>
+        <input type="text" name="edad" placeholder="Introduce tu edad"></p>
         <p>Curso <br>
           <select name="curso" placeholder="Introduce tu curso">
             <option value="">--Selecciona uno--</option>
@@ -46,7 +29,7 @@ if ($registro->connect_errno) {
       <fieldset class="caja">
         <legend>¿CÓMO QUIERES INICIAR SESIÓN?</legend>
         <p>Nombre de usuario <b>*</b><br>
-          <input type="text" name="usuario" value="" placeholder="Introduce tu usuario"></p>
+          <input type="text" name="usuario" value="" placeholder="Introduce tu usuario" required></p>
         <p>Contraseña <br>
           <input type="password" name="contrasenya" value="" placeholder="Introduce tu contraseña"></p>
         <p>Repite la contraseña <br>

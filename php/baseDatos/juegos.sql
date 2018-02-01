@@ -20,15 +20,15 @@ USE `juegos`;
 CREATE TABLE IF NOT EXISTS `usuarios` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `nombre` varchar(50) COLLATE latin1_spanish_ci NOT NULL,
-  `apellidos` varchar(50) COLLATE latin1_spanish_ci DEFAULT NULL,
+  `apellidos` varchar(50) COLLATE latin1_spanish_ci NOT NULL DEFAULT '',
   `usuario` varchar(50) COLLATE latin1_spanish_ci NOT NULL,
-  `contrasenya` varchar(50) COLLATE latin1_spanish_ci NOT NULL,
-  `edad` date DEFAULT NULL,
-  `curso` int(11) DEFAULT NULL,
-  `puntuacion` int(11) NOT NULL,
+  `contrasenya` varchar(50) COLLATE latin1_spanish_ci NOT NULL DEFAULT '',
+  `edad` year(4) NOT NULL DEFAULT '2018',
+  `curso` varchar(50) COLLATE latin1_spanish_ci NOT NULL DEFAULT '',
+  `puntuacion` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `usuario` (`usuario`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
 
 -- La exportación de datos fue deseleccionada.
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
