@@ -9,5 +9,5 @@ if ($juegos->connect_errno) {
   '".$_POST['usuario']."','".$_POST['contrasenya']."',".$_POST['edad'].",
   '".$_POST['curso']."')");
 }
-header('Location: listadoUsuarios.php');
+header('Location: listadoUsuarios-05.php');
 ?>

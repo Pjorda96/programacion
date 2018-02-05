@@ -7,7 +7,7 @@
   </head>
   <body>
     <h1>CREAR PERFIL</h1>
-    <form action="insertarPOST.php" method="post">
+    <form action="insertarPOST-05.php" method="post">
       <fieldset class="caja">
         <legend>¿QUIEN ERES?</legend>
         <p>Nombre <b>*</b><br>
@@ -45,6 +45,6 @@
       </fieldset>
       <input type="submit" name="crear" value="Crear cuenta">
     </form>
-    <button type="button" name="button" onclick="location.href='listadoUsuarios.php'">Volver</button>
+    <button type="button" name="button" onclick="location.href='listadoUsuarios-05.php'">Volver</button>
   </body>
 </html>

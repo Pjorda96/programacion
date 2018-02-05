@@ -39,7 +39,7 @@
       <!--nuevo usuario-->
       <fielset class="crear">
         <legend>Crear nuevo usuario.</legend>
-        <button type="button" name="button" onclick="location.href='insertarUsuario.php'">Crear nuevo usuario</button>
+        <button type="button" name="button" onclick="location.href='insertarUsuario-05.php'">Crear nuevo usuario</button>
       </fielset>
     </div>
   </body>
