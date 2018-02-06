@@ -11,7 +11,12 @@
       <!--formulario para elegir usuario existente-->
       <fielset>
         <legend>Selecciona tu usuario.</legend>
-        <form class="user" action="ahorcado.php" method="post">
+        <form class="user" action="
+        <?php $redirec="";
+        if ($redirec=="empezar") echo"ahorcado.php";
+        else if ($redirec=="modificar") echo"actualizarUsuario.php";
+        else if ($redirec=="borrar") echo"borrarUsuario.php";
+        ?>" method="post">
           <select class="" name="usuario">
             <?php
             $juegos=new mysqli("localhost","root","","juegos");
