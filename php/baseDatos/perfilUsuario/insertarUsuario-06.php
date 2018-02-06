@@ -14,8 +14,8 @@
         <input type="text" name="nombre" value="" placeholder="Introduce tu nombre" required></p>
         <p>Apellidos <br>
           <input type="text" name="apellidos" value="" placeholder="Introduce tus apellidos"></p>
-        <p>Fecha de nacimiento: <br>
-        <input type="text" name="edad" placeholder="Introduce tu edad"></p>
+        <p>Año de nacimiento: <br>
+        <input type="text" name="edad" placeholder="Introduce tu año de nacimiento"></p>
         <p>Curso <br>
           <select name="curso" placeholder="Introduce tu curso">
             <option value="">--Selecciona uno--</option>
