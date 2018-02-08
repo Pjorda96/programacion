@@ -23,10 +23,10 @@
               <option value="">--Selecciona uno--</option>
               <?php
               //interactuar con la base de datos
-              $resultado = $juegos->query("select usuario from usuarios");
+              $resultado = $juegos->query("select usuario, nombre from usuarios");
               foreach ($resultado as $fila) {
                 ?>
-                <option value="<?=$fila['usuario']?>"><?=$fila['usuario']?></option>
+                <option value="<?=$fila['usuario']?>"><?=$fila['usuario']?>, <?=$fila['nombre']?></option>
                 <?php
               }
             }
