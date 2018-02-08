@@ -11,12 +11,7 @@
       <!--formulario para elegir usuario existente-->
       <fielset>
         <legend>Selecciona tu usuario.</legend>
-        <form class="user" action="
-        <?php $redirec="";
-        if ($redirec=="empezar") echo"ahorcado.php";
-        else if ($redirec=="modificar") echo"actualizarUsuario.php";
-        else if ($redirec=="borrar") echo"borrarUsuario.php";
-        ?>" method="post">
+        <form class="form" action="" method="post" name="form">
           <select class="" name="usuario">
             <?php
             $juegos=new mysqli("localhost","root","","juegos");
@@ -36,8 +31,11 @@
               }
             }
             ?>
-          </select>
+          </select><br>
           <input type="submit" value="Empezar"></input>
+          <!--onclick="form.action = 'ahorcado.php'; return true;"
+          <input type="submit" value="Modificar" onclick="form.action = 'actualizarUsuario.php'; return true;"></input>
+          <input type="submit" value="Borrar" onclick="form.action = 'borrarUsuario.php'; return true;"></input>-->
         </form>
       </fielset>
     <br><br>
