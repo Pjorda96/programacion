@@ -45,6 +45,7 @@
       <!--MODIFICACIÓN 3-->
       <fielset class="muestra">
         <legend>Mostrar usuario</legend>
+          <table>
             <?php
             $juegos=new mysqli("localhost","root","","juegos");
             if ($juegos->connect_errno) {
@@ -53,12 +54,15 @@
               //MODIFICACIÓN 2
               $resultado = $juegos->query("select id, usuario, correo, nombre from usuarios");
               foreach ($resultado as $fila):?>
-                <button type="button" name="button" onclick="location.href='muestraUsuario.php?id=<?=$fila['id']?>'">
-                  <?=$fila['usuario']?>, <?=$fila['nombre']?>, <?=$fila['correo']?></button>
+              <tr>
+                <td><button type="button" name="button" onclick="location.href='muestraUsuario.php?id=<?=$fila['id']?>'">
+                  <?=$fila['usuario']?>, <?=$fila['nombre']?>, <?=$fila['correo']?></button></td>
+              </tr>
                 <?php
               endforeach;
             }
             ?>
+          </table>
       </fielset>
     </div>
   </body>

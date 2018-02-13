@@ -25,6 +25,6 @@ p{
 b{
   color: red;
 }
-table{
-  text-align: center;
+fieldset.muestra{
+  align: center;
 }
