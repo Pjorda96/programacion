@@ -22,11 +22,11 @@
               ?>
               <option value="">--Selecciona uno--</option>
               <?php
-              //interactuar con la base de datos
-              $resultado = $juegos->query("select usuario, nombre from usuarios");
+              //MODIFICACIÓN 2
+              $resultado = $juegos->query("select id, usuario, correo, nombre from usuarios");
               foreach ($resultado as $fila) {
                 ?>
-                <option value="<?=$fila['usuario']?>"><?=$fila['usuario']?>, <?=$fila['nombre']?></option>
+                <option value="<?=$fila['usuario']?>"><?=$fila['usuario']?>, <?=$fila['nombre']?>, <?=$fila['correo']?></option>
                 <?php
               }
             }
@@ -39,7 +39,26 @@
       <!--nuevo usuario-->
       <fielset class="crear">
         <legend>Crear nuevo usuario.</legend>
-        <button type="button" name="button" onclick="location.href='insertarUsuario-05.php'">Crear nuevo usuario</button>
+        <button type="button" name="button" onclick="location.href='insertarUsuario-EXAMEN.php'">Crear nuevo usuario</button>
+      </fielset>
+
+      <!--MODIFICACIÓN 3-->
+      <fielset class="muestra">
+        <legend>Mostrar usuario</legend>
+            <?php
+            $juegos=new mysqli("localhost","root","","juegos");
+            if ($juegos->connect_errno) {
+              echo "Fallo al conectar a MySQL: " . $juegos->connect_error;
+            } else {
+              //MODIFICACIÓN 2
+              $resultado = $juegos->query("select id, usuario, correo, nombre from usuarios");
+              foreach ($resultado as $fila):?>
+                <button type="button" name="button" onclick="location.href='muestraUsuario.php?id=<?=$fila['id']?>'">
+                  <?=$fila['usuario']?>, <?=$fila['nombre']?>, <?=$fila['correo']?></button>
+                <?php
+              endforeach;
+            }
+            ?>
       </fielset>
     </div>
   </body>

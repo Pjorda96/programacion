@@ -7,7 +7,7 @@
   </head>
   <body>
     <h1>CREAR PERFIL</h1>
-    <form action="insertarPOST-05.php" method="post">
+    <form action="insertarPOST-EXAMEN.php" method="post">
       <fieldset class="caja">
         <legend>¿QUIEN ERES?</legend>
         <p>Nombre <b>*</b><br>
@@ -25,6 +25,9 @@
             <option value="eso">ESO</option>
             <option value="primaria">Primaria</option>
           </select></p>
+          <!--MODIFICACIÓN 1-->
+          <p>Correo electrónico: <br>
+          <input type="text" name="correo" placeholder="Introduce tu correo"></p>
       </fieldset>
       <fieldset class="caja">
         <legend>¿CÓMO QUIERES INICIAR SESIÓN?</legend>
@@ -45,6 +48,6 @@
       </fieldset>
       <input type="submit" name="crear" value="Crear cuenta">
     </form>
-    <button type="button" name="button" onclick="location.href='listadoUsuarios-05.php'">Volver</button>
+    <button type="button" name="button" onclick="location.href='listadoUsuarios-EXAMEN.php'">Volver</button>
   </body>
 </html>
