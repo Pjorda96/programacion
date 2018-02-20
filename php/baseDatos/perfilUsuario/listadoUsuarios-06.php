@@ -72,7 +72,25 @@
       <!--modificar usuario-->
       <fielset>
         <legend>Modificar usuario.</legend>
-        <button type="button" name="button" onclick="location.href='actualizarUsuario-06.php'">Modificar</button>
+        <form class="user" action="actualizarUsuario-06.php" method="post">
+          <select class="" name="usuario">
+            <?php
+            $juegos=new mysqli("localhost","root","","juegos");
+            if ($juegos->connect_errno) {
+              echo "Fallo al conectar a MySQL: " . $juegos->connect_error;
+            } else {
+              ?>
+              <option value="">--Selecciona uno--</option>
+              <?php
+              $resultado = $juegos->query($usuarios);
+              foreach ($resultado as $fila):?>
+                <option value="<?=$fila['usuario']?>"><?=$fila['usuario']?></option>
+              <?php endforeach;
+            }
+            ?>
+          </select>
+          <input type="submit" value="Modificar"></input>
+        </form>
       </fielset>
   </body>
 </html>

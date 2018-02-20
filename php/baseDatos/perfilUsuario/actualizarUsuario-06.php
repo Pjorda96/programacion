@@ -21,5 +21,6 @@
 
       </fieldset>
     </form>
+    <button type="button" name="button" onclick="location.href='listadoUsuarios-06.php'">Volver</button>
   </body>
 </html>
