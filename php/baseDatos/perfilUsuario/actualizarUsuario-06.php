@@ -7,7 +7,7 @@
   </head>
   <body>
     <h1>MODIFICAR USUARIO</h1>
-    <form class="" action="index.html" method="post">
+    <form class="" action="actualizarUsuarioPOST-06.php" method="post">
       <fieldset>
         <?php
         $juegos=new mysqli("localhost","root","","juegos");
@@ -31,7 +31,7 @@
         }
         ?>
         <p>Nombre de usuario <b>*</b><br>
-          <input type="text" name="usuario" value="" placeholder="<?=$usuarioQ?>" readonly></p>
+          <input type="text" name="usuario" value="<?=$usuarioQ?>" readonly></p>
         <fieldset class="caja">
           <legend>¿QUIEN ERES?</legend>
           <p>Nombre <b>*</b><br>
@@ -50,6 +50,7 @@
               <option value="primaria">Primaria</option>
             </select></p>
         </fieldset>
+        <input type="submit" class="actualizar" name="actualizar" value="Actualizar">
       </fieldset>
     </form>
     <button type="button" name="button" onclick="location.href='listadoUsuarios-06.php'">Volver</button>
