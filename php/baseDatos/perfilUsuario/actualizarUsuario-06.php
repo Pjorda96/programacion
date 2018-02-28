@@ -7,7 +7,7 @@
   </head>
   <body>
     <h1>MODIFICAR USUARIO</h1>
-    <form class="" action="actualizarUsuarioPOST-06.php" method="post">
+    <form name="enviar" action="actualizarUsuario-06.php" method="post">
       <fieldset>
         <?php
         $juegos=new mysqli("localhost","root","","juegos");

@@ -1,4 +1,5 @@
 <?php
+//if (isset($_POST["enviar"])){
 $juegos=new mysqli("localhost","root","","juegos");
 if ($juegos->connect_errno) {
   echo "Fallo al conectar a MySQL: " . $juegos->connect_error;
@@ -8,5 +9,7 @@ if ($juegos->connect_errno) {
   echo $actualizar;
   $registro = $juegos->query($actualizar);
 }
+//$juegos->close();
 header('Location: listadoUsuarios-06.php');
+//}
 ?>
