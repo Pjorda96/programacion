@@ -7,7 +7,7 @@
   </head>
   <body>
     <h1>MODIFICAR USUARIO</h1>
-    <form name="enviar" action="actualizarUsuario-06.php" method="post"  onsubmit="return actualizarblanco()">
+    <form name="enviar" action="actualizarUsuarioPOST-06.php" method="post"  onsubmit="return actualizarblanco()">
       <fieldset>
         <?php
         $juegos=new mysqli("localhost","root","","juegos");
@@ -37,11 +37,11 @@
           <p>Nombre <b>*</b><br>
           <input type="text" name="nombre" value="<?=$nombreQ?>" id="nuevonombre" required></p>
           <p>Apellidos <br>
-            <input type="text" name="apellidos" value="<?=$apellidosQ?>" id="nuevoapellido" required></p>
+            <input type="text" name="apellidos" value="<?=$apellidosQ?>" id="nuevoapellido" ></p>
           <p>Año de nacimiento: <br>
-          <input type="text" name="edad" value="<?=$edadQ?>" id="nuevoedad" required></p>
+          <input type="text" name="edad" value="<?=$edadQ?>" id="nuevoedad" ></p>
           <p>Curso <br>
-            <select name="curso" id="nuevocurso" required>
+            <select name="curso" id="nuevocurso" >
               <option value="<?=$cursoQ?>"><?=$cursoQ?></option>
               <option value="2daw">2º DAW</option>
               <option value="1daw">1º DAW</option>
