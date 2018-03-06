@@ -5,11 +5,11 @@ require_once "lib/PokemonDAW.php";
  */
 class JosepMagikarp extends PokemonDaw
 {
-  private $utilidad=false;
+  private $utilidad="ninguna";
 
   function __construct()
   {
-    parent::setCola(0);
+    parent::setLongitudCola(0);
     parent::setVida(200);
   }
 
@@ -24,10 +24,10 @@ class JosepMagikarp extends PokemonDaw
   }
 
   public function programacion(){
-    $this->utilidad=true;
+    $this->utilidad="poca";
   }
 
   public function sistemas(){
-    $this->utilidad=false;
+    $this->utilidad="ninguna";
   }
 }

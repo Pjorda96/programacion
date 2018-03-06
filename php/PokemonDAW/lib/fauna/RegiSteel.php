@@ -24,5 +24,6 @@ class RegiSteel extends PokemonDaw
 
   public function tardeDeGYM(){
     $this->dureza=$this->dureza + 10;
+    echo "Ha usado 'tarde de gimnasio' y ahora tiene +10 de dureza.<br>";
   }
 }

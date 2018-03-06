@@ -11,7 +11,7 @@ class PokemonDAW
 
   function __construct()
   {
-    
+
   }
   public function getVida()
   {
@@ -20,7 +20,6 @@ class PokemonDAW
   public function setVida($vida)
   {
     $this->vida = $vida;
-    return $this->vida;
   }
   public function getLongitudCola()
   {
@@ -29,6 +28,5 @@ class PokemonDAW
   public function setLongitudCola($longitudCola)
   {
     $this->longitudCola = $longitudCola;
-    return $this->longitudCola;
   }
 }

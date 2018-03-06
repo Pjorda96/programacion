@@ -10,7 +10,7 @@ class PabloRayquaza extends PokemonDaw
 
   function __construct()
   {
-    parent::setCola(1000);
+    parent::setLongitudCola(1000);
     parent::setVida(1000);
   }
 
@@ -31,9 +31,11 @@ class PabloRayquaza extends PokemonDaw
 
   public function comerYDormir(){
     $this->altura=$this->altura + 0.05;
+    echo "Ha crecido 5 cm.";
   }
 
   public function nivelar(){
-    parent::setCola(100);
+    parent::setLongitudCola(100);
+    echo "Ha usado 'buena gente', se ha puesto al nivel del resto y ahora tiene 100 de vida.<br>";
   }
 }

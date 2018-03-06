@@ -9,7 +9,7 @@ class JoanGrowlithe extends PokemonDaw
 
   function __construct()
   {
-    
+
   }
 
   public function getAgilidad()
@@ -24,5 +24,6 @@ class JoanGrowlithe extends PokemonDaw
 
   public function padel(){
     $this->agilidad=$this->agilidad + 10;
+    echo "Subió 10 de vida.";
   }
 }
