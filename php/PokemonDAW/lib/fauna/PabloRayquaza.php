@@ -32,4 +32,8 @@ class PabloRayquaza extends PokemonDaw
   public function comerYDormir(){
     $this->altura=$this->altura + 0.05;
   }
+
+  public function nivelar(){
+    parent::setCola(100);
+  }
 }
