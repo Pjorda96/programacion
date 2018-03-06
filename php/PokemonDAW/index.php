@@ -14,3 +14,8 @@ $pablo-> nivelar();
 $regi= new RegiSteel();
 $regi-> tardeDeGYM();
 $sergio= new SergioHoothoot();
+
+echo "Características de Joan:<br>";
+echo "Tiene ".$joan-> getVida()." de vida.<br>";
+echo "Su cola es de ".$joan-> getLongitudCola()."<br>";
+echo "Su poder agilidad es de ".$joan->getAgilidad();
