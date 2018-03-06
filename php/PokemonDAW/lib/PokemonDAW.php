@@ -9,10 +9,9 @@ class PokemonDAW
   private $vida=100;
   private $longitudCola=100;
 
-  function __construct($vida,$longitudCola)
+  function __construct()
   {
-    $this->vida=$vida;
-    $this->longitudCola=$longitudCola;
+    
   }
   public function getVida()
   {
