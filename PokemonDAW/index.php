@@ -37,7 +37,7 @@ echo "Su cola es de ".$regi-> getLongitudCola()."<br>";
 echo $regi-> tardeDeGYM()."<br>";
 
 $sergio= new SergioHoothoot();
-echo "Características de Julio:<br>";
+echo "Características de Sergio:<br>";
 echo "Tiene ".$sergio-> getVida()." de vida.<br>";
 echo "Su cola es de ".$sergio-> getLongitudCola()."<br>";
 echo "Número de patas disponibles: '".$sergio->getPatas()."'.<br><br>";
