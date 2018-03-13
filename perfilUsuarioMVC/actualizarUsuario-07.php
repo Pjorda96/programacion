@@ -1,3 +1,6 @@
+<?php
+use lib\Db as Db;
+?>
 <!DOCTYPE html>
 <html>
   <head>
