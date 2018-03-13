@@ -14,7 +14,7 @@
         if ($juegos->connect_errno) {
           echo "Fallo al conectar a MySQL: " . $juegos->connect_error;
         } else {
-          $consulta="select nombre,apellidos,usuario,edad,curso from usuarios where nombre='".$_POST['usuario']."'";
+          $consulta="select nombre,apellidos,usuario,edad,curso from usuarios where usuario='".$_POST['usuario']."'";
           //echo $consulta;
           $consultaUsuario = $juegos->query($consulta);
 

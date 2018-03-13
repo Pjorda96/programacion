@@ -7,23 +7,23 @@
   </head>
   <body>
     <h1>MODIFICAR USUARIO</h1>
-    <form name="enviar" action="actualizarUsuarioPOST-06.php" method="post">
+    <form class="" action="actualizarUsuarioPOST-06.php" method="post">
       <fieldset>
         <?php
         $juegos=new mysqli("localhost","root","","juegos");
         if ($juegos->connect_errno) {
           echo "Fallo al conectar a MySQL: " . $juegos->connect_error;
         } else {
-          $consulta="select nombre,apellidos,usuario,edad,curso from usuarios where nombre='".$_POST['usuario']."'";
+          $consulta="select nombre,apellidos,usuario,edad,curso from usuarios where usuario='".$_POST['usuario']."'";
           //echo $consulta;
           $consultaUsuario = $juegos->query($consulta);
 
           foreach ($consultaUsuario as $fila) {
-            $usuario=$_POST['usuario'];
-            $nombre=$fila['nombre'];
-            $apellidos=$fila['apellidos'];
-            $edad=$fila['edad'];
-            $curso=$fila['curso'];
+            $usuarioQ=$_POST['usuario'];
+            $nombreQ=$fila['nombre'];
+            $apellidosQ=$fila['apellidos'];
+            $edadQ=$fila['edad'];
+            $cursoQ=$fila['curso'];
           }
 
           $actualizar="update from usuarios where usuario='".$_POST['usuario']."' ;";
@@ -31,18 +31,18 @@
         }
         ?>
         <p>Nombre de usuario <b>*</b><br>
-          <input type="text" name="usuario" value="<?=$usuario?>" readonly></p>
+          <input type="text" name="usuario" value="<?=$usuarioQ?>" readonly></p>
         <fieldset class="caja">
           <legend>¿QUIEN ERES?</legend>
           <p>Nombre <b>*</b><br>
-          <input type="text" name="nombre" value="<?=$nombre?>" id="nuevonombre" required></p>
+          <input type="text" name="nombre" value="<?=$nombreQ?>" required></p>
           <p>Apellidos <br>
-            <input type="text" name="apellidos" value="<?=$apellidos?>" id="nuevoapellido" ></p>
+            <input type="text" name="apellidos" value="<?=$apellidosQ?>" required></p>
           <p>Año de nacimiento: <br>
-          <input type="text" name="edad" value="<?=$edad?>" id="nuevoedad" ></p>
+          <input type="text" name="edad" value="<?=$edadQ?>" required></p>
           <p>Curso <br>
-            <select name="curso" id="nuevocurso" >
-              <option value="<?=$curso?>"><?=$curso?></option>
+            <select name="curso" required>
+              <option value="<?=$cursoQ?>"><?=$cursoQ?></option>
               <option value="2daw">2º DAW</option>
               <option value="1daw">1º DAW</option>
               <option value="bachiller">Bachiller</option>
