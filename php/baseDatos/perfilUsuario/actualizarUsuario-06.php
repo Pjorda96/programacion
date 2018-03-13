@@ -7,7 +7,7 @@
   </head>
   <body>
     <h1>MODIFICAR USUARIO</h1>
-    <form name="enviar" action="actualizarUsuarioPOST-06.php" method="post"  onsubmit="return actualizarblanco()">
+    <form name="enviar" action="actualizarUsuarioPOST-06.php" method="post">
       <fieldset>
         <?php
         $juegos=new mysqli("localhost","root","","juegos");
@@ -19,11 +19,11 @@
           $consultaUsuario = $juegos->query($consulta);
 
           foreach ($consultaUsuario as $fila) {
-            $usuarioQ=$_POST['usuario'];
-            $nombreQ=$fila['nombre'];
-            $apellidosQ=$fila['apellidos'];
-            $edadQ=$fila['edad'];
-            $cursoQ=$fila['curso'];
+            $usuario=$_POST['usuario'];
+            $nombre=$fila['nombre'];
+            $apellidos=$fila['apellidos'];
+            $edad=$fila['edad'];
+            $curso=$fila['curso'];
           }
 
           $actualizar="update from usuarios where usuario='".$_POST['usuario']."' ;";
@@ -31,18 +31,18 @@
         }
         ?>
         <p>Nombre de usuario <b>*</b><br>
-          <input type="text" name="usuario" value="<?=$usuarioQ?>" readonly></p>
+          <input type="text" name="usuario" value="<?=$usuario?>" readonly></p>
         <fieldset class="caja">
           <legend>¿QUIEN ERES?</legend>
           <p>Nombre <b>*</b><br>
-          <input type="text" name="nombre" value="<?=$nombreQ?>" id="nuevonombre" required></p>
+          <input type="text" name="nombre" value="<?=$nombre?>" id="nuevonombre" required></p>
           <p>Apellidos <br>
-            <input type="text" name="apellidos" value="<?=$apellidosQ?>" id="nuevoapellido" ></p>
+            <input type="text" name="apellidos" value="<?=$apellidos?>" id="nuevoapellido" ></p>
           <p>Año de nacimiento: <br>
-          <input type="text" name="edad" value="<?=$edadQ?>" id="nuevoedad" ></p>
+          <input type="text" name="edad" value="<?=$edad?>" id="nuevoedad" ></p>
           <p>Curso <br>
             <select name="curso" id="nuevocurso" >
-              <option value="<?=$cursoQ?>"><?=$cursoQ?></option>
+              <option value="<?=$curso?>"><?=$curso?></option>
               <option value="2daw">2º DAW</option>
               <option value="1daw">1º DAW</option>
               <option value="bachiller">Bachiller</option>
@@ -54,6 +54,5 @@
       </fieldset>
     </form>
     <button type="button" name="button" onclick="location.href='listadoUsuarios-06.php'">Volver</button>
-    <script src="comprobarActualizar.js" charset="utf-8"></script>
   </body>
 </html>
