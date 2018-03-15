@@ -1,9 +1,13 @@
+<?php
+require_once "Db.php";
+$baseDatos=new Db();
+?>
 <!DOCTYPE html>
 <html>
   <head>
     <meta charset="utf-8">
     <title>Listado de Usuarios</title>
-    <link rel="stylesheet" href="css/perfilUsuario.css">
+    <link rel="stylesheet" href="perfilUsuario.css">
   </head>
   <body>
     <h1>BIENVENIDO AL AHORCADO</h1>
@@ -13,23 +17,9 @@
         <legend>Selecciona tu usuario.</legend>
         <form class="form" action="" method="post" name="form">
           <select class="" name="usuario">
+            <option value="">--Selecciona uno--</option>;
             <?php
-            $juegos=new mysqli("localhost","root","","juegos");
-            if ($juegos->connect_errno) {
-              echo "Fallo al conectar a MySQL: " . $juegos->connect_error;
-            } else {
-              ?>
-              <option value="">--Selecciona uno--</option>
-              <?php
-              //interactuar con la base de datos
-              $usuarios="select usuario from usuarios";
-              $resultado = $juegos->query($usuarios);
-              foreach ($resultado as $fila) {
-                ?>
-                <option value="<?=$fila['usuario']?>"><?=$fila['usuario']?></option>
-                <?php
-              }
-            }
+            $baseDatos->lista();
             ?>
           </select><br>
           <input type="submit" value="Empezar"></input>
@@ -50,19 +40,9 @@
         <legend>Borrar usuario.</legend>
         <form class="user" action="borrarUsuario-07.php" method="post">
           <select class="" name="usuario">
+            <option value="">--Selecciona uno--</option>;
             <?php
-            $juegos=new mysqli("localhost","root","","juegos");
-            if ($juegos->connect_errno) {
-              echo "Fallo al conectar a MySQL: " . $juegos->connect_error;
-            } else {
-              ?>
-              <option value="">--Selecciona uno--</option>
-              <?php
-              $resultado = $juegos->query($usuarios);
-              foreach ($resultado as $fila):?>
-                <option value="<?=$fila['usuario']?>"><?=$fila['usuario']?></option>
-              <?php endforeach;
-            }
+            $baseDatos->lista();
             ?>
           </select>
           <input type="submit" value="Borrar"></input>
@@ -74,19 +54,9 @@
         <legend>Modificar usuario.</legend>
         <form class="user" action="actualizarUsuario-07.php" method="post">
           <select class="" name="usuario">
+            <option value="">--Selecciona uno--</option>;
             <?php
-            $juegos=new mysqli("localhost","root","","juegos");
-            if ($juegos->connect_errno) {
-              echo "Fallo al conectar a MySQL: " . $juegos->connect_error;
-            } else {
-              ?>
-              <option value="">--Selecciona uno--</option>
-              <?php
-              $resultado = $juegos->query($usuarios);
-              foreach ($resultado as $fila):?>
-                <option value="<?=$fila['usuario']?>"><?=$fila['usuario']?></option>
-              <?php endforeach;
-            }
+            $baseDatos->lista();
             ?>
           </select>
           <input type="submit" value="Modificar"></input>

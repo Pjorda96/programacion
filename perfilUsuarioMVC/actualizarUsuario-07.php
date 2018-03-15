@@ -1,12 +1,12 @@
 <?php
-use lib/Db as Db;
+use Lib\Db as Db;
 ?>
 <!DOCTYPE html>
 <html>
   <head>
     <meta charset="utf-8">
     <title>Actualizar</title>
-    <link rel="stylesheet" href="css/perfilUsuario.css">
+    <link rel="stylesheet" href="perfilUsuario.css">
   </head>
   <body>
     <h1>MODIFICAR USUARIO</h1>
