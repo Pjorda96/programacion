@@ -1,3 +1,8 @@
+<?php
+require_once "Db.php";
+$baseDatos=new Db();
+$baseDatos->conectar();
+?>
 <!DOCTYPE html>
 <html>
   <head>
@@ -7,7 +12,7 @@
   </head>
   <body>
     <h1>CREAR PERFIL</h1>
-    <form action="insertarPOST-07.php" method="post">
+    <form method="post" onsubmit="return espaciosVacios() && return insertarUsuario()">
       <fieldset class="caja">
         <legend>¿QUIEN ERES?</legend>
         <p>Nombre <b>*</b><br>
@@ -46,5 +51,6 @@
       <input type="submit" name="crear" value="Crear cuenta">
     </form>
     <button type="button" name="button" onclick="location.href='listadoUsuarios-07.php'">Volver</button>
+    <script src="comprobarInsertar.js" charset="utf-8"></script>
   </body>
 </html>

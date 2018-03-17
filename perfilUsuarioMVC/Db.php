@@ -10,8 +10,15 @@ class Db
   private $user="";
   private $pass="";
   private $db="";
+
+  private $usuario="";
+  private $nombre="";
+  private $apellidos="";
+  private $edad=0;
+  private $curso="";
   //Propiedad conector
   private $conector;
+
   function __construct()
   {
     global $config;
@@ -20,6 +27,7 @@ class Db
     $this->pass=$config["pass"];
     $this->db=$config["db"];
   }
+
   function conectar(){
     $conectorTmp = new mysqli ($this->server,$this->user,
                                   $this->pass,$this->db) ;
@@ -30,10 +38,54 @@ class Db
     }
   }
 
-  function getConector(){
-    return $this->conector;
+  public function lista(){
+    $usuarios="select usuario from usuarios";
+    $resultado = $conector->query($usuarios);
+    foreach ($resultado as $fila) {
+      echo '"<option value="';
+      echo $fila['usuario'];
+      echo '">';
+      echo $fila['usuario'];
+      echo '</option><br>"';
+    }
   }
 
+  public function leerDatos(){
+    $consulta="select nombre,apellidos,usuario,edad,curso from usuarios where usuario='".$_POST['usuario']."'";
+    $consultaUsuario = $conector->query($consulta);
+
+    foreach ($consultaUsuario as $fila) {
+      $this->usuario=$_POST['usuario'];
+      $this->nombre=setNombre($fila['nombre']);
+      $this->apellidos=setApellidos($fila['apellidos']);
+      $this->edad=setEdad($fila['edad']);
+      $this->curso=setCurso($fila['curso']);
+    }
+  }
+
+  public function insertarUsuario(){
+    $insertar="insert into usuarios (nombre,apellidos,usuario,contrasenya,edad,curso) values ('".$_POST['nombre']."','".$_POST['apellidos']."', '".$_POST['usuario']."','".$_POST['contrasenya']."','".$_POST['edad']."', '".$_POST['curso']."')";
+    $registro = $juegos->query($insertar);
+    header('Location: listadoUsuarios-07.php');
+  }
+
+  public function actualizarUsuario(){
+    $actualizar="update usuarios set nombre='".$_POST['nombre']."',apellidos='".
+    $_POST['apellidos']."',edad='".$_POST['edad']."',curso='".$_POST['curso']."'
+    where usuario='".$_POST['usuario']."';";
+    $registro = $conector->query($actualizar);
+    header('Location: listadoUsuarios-07.php');
+  }
+
+  public function borrarUsuario(){
+    $borrar="delete from usuarios where usuario='".$_POST['usuario']."';";
+    $registro = $conector->query($borrar);
+    header('Location: listadoUsuarios-07.php');
+  }
+
+  public function getConector(){
+    return $this->conector;
+  }
   public function getServer()
   {
     return $this->server;
@@ -56,32 +108,54 @@ class Db
   }
   public function setPass($pass)
   {
-      $this->pass = $pass;
+    $this->pass = $pass;
   }
   public function getDb()
   {
-      return $this->db;
+    return $this->db;
   }
   public function setDb($db)
   {
     $this->db = $db;
   }
-
-  public function lista(){
-    $juegos=new mysqli("localhost","root","","juegos");
-    if ($juegos->connect_errno) {
-      return "Fallo al conectar a MySQL: " . $juegos->connect_error;
-    } else {
-      //interactuar con la base de datos
-      $usuarios="select usuario from usuarios";
-      $resultado = $juegos->query($usuarios);
-      foreach ($resultado as $fila) {
-        echo '"<option value="';
-        echo $fila['usuario'];
-        echo '">';
-        echo $fila['usuario'];
-        echo '</option><br>"';
-      }
-    }
+  public function getUsuario()
+  {
+    return $this->usuario;
+  }
+  public function setUsuario($usuario)
+  {
+    $this->usuario = $usuario;
+  }
+  public function getNombre()
+  {
+    return $this->nombre;
+  }
+  public function setNombre($nombre)
+  {
+    $this->nombre = $nombre;
+  }
+  public function getApellidos()
+  {
+    return $this->apellidos;
+  }
+  public function setApellidos($apellidos)
+  {
+    $this->apellidos = $apellidos;
+  }
+  public function getEdad()
+  {
+    return $this->edad;
+  }
+  public function setEdad($edad)
+  {
+    $this->edad = $edad;
+  }
+  public function getCurso()
+  {
+    return $this->curso;
+  }
+  public function setCurso($curso)
+  {
+    $this->curso = $curso;
   }
 }

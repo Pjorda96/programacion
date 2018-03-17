@@ -25,9 +25,6 @@
             $edadQ=$fila['edad'];
             $cursoQ=$fila['curso'];
           }
-
-          $actualizar="update from usuarios where usuario='".$_POST['usuario']."' ;";
-          $registro = $juegos->query($actualizar);
         }
         ?>
         <p>Nombre de usuario <b>*</b><br>

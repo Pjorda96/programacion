@@ -1,6 +1,7 @@
 <?php
 require_once "Db.php";
 $baseDatos=new Db();
+$baseDatos->conectar();
 ?>
 <!DOCTYPE html>
 <html>
@@ -38,7 +39,7 @@ $baseDatos=new Db();
       <!--borrar usuario-->
       <fielset>
         <legend>Borrar usuario.</legend>
-        <form class="user" action="borrarUsuario-07.php" method="post">
+        <form class="user" method="post" onsubmit="return borrarUsuario()">
           <select class="" name="usuario">
             <option value="">--Selecciona uno--</option>;
             <?php
