@@ -7,7 +7,7 @@
   </head>
   <body>
     <h1>MODIFICAR USUARIO</h1>
-    <form class="" action="actualizarUsuarioPOST-06.php" method="post">
+    <form class="" action="actualizarUsuarioPOST-06.php" method="post" onsubmit="return actualizarBlanco()">
       <fieldset>
         <?php
         $juegos=new mysqli("localhost","root","","juegos");
@@ -54,5 +54,6 @@
       </fieldset>
     </form>
     <button type="button" name="button" onclick="location.href='listadoUsuarios-06.php'">Volver</button>
+    <script src="comprobarActualizar.js" charset="utf-8"></script>
   </body>
 </html>
