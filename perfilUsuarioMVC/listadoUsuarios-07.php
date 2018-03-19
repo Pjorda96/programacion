@@ -1,5 +1,5 @@
 <?php
-require_once "Db.php";
+require_once("Db.php");
 $baseDatos=new Db();
 $baseDatos->conectar();
 ?>
