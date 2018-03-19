@@ -1,5 +1,6 @@
 <?php
-require_once "Db.php";
+use Daw\Models\Db as Db;
+require_once("./src/models/Db.php");
 $baseDatos=new Db();
 $baseDatos->conectar();
 ?>
@@ -8,7 +9,7 @@ $baseDatos->conectar();
   <head>
     <meta charset="utf-8">
     <title>Listado de Usuarios</title>
-    <link rel="stylesheet" href="perfilUsuario.css">
+    <link rel="stylesheet" href="css/perfilUsuario.css">
   </head>
   <body>
     <h1>BIENVENIDO AL AHORCADO</h1>
@@ -33,13 +34,13 @@ $baseDatos->conectar();
       <!--nuevo usuario-->
       <fielset>
         <legend>Crear nuevo usuario.</legend>
-        <button type="button" name="button" onclick="location.href='insertarUsuario-07.php'">Crear nuevo usuario</button>
+        <button type="button" name="button" onclick="location.href='insertarUsuario-08.php'">Crear nuevo usuario</button>
       </fielset>
     <br><br>
       <!--borrar usuario-->
       <fielset>
         <legend>Borrar usuario.</legend>
-        <form class="user" method="post" onsubmit="return borrarUsuario()">
+        <form class="user" method="post" onsubmit="return js/borrarUsuario()">
           <select class="" name="usuario">
             <option value="">--Selecciona uno--</option>;
             <?php
@@ -53,7 +54,7 @@ $baseDatos->conectar();
       <!--modificar usuario-->
       <fielset>
         <legend>Modificar usuario.</legend>
-        <form class="user" action="actualizarUsuario-07.php" method="post">
+        <form class="user" action="actualizarUsuario-08.php" method="post">
           <select class="" name="usuario">
             <option value="">--Selecciona uno--</option>;
             <?php

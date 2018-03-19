@@ -1,5 +1,6 @@
 <?php
-require_once "Db.php";
+use Daw\Models\Db as Db;
+require_once("./src/models/Db.php");
 $baseDatos=new Db();
 $baseDatos->conectar();
 ?>
@@ -8,11 +9,11 @@ $baseDatos->conectar();
   <head>
     <meta charset="utf-8">
     <title>Actualizar</title>
-    <link rel="stylesheet" href="perfilUsuario.css">
+    <link rel="stylesheet" href="css/perfilUsuario.css">
   </head>
   <body>
     <h1>MODIFICAR USUARIO</h1>
-    <form name="enviar" method="post"  onsubmit="return actualizarBlanco() && return actualizarUsuario()">
+    <form name="enviar" method="post"  onsubmit="return js/actualizarBlanco() && return actualizarUsuario()">
       <fieldset>
         <?php
         $baseDatos->leerDatos();
@@ -40,7 +41,7 @@ $baseDatos->conectar();
         <input type="submit" class="actualizar" name="actualizar" value="Actualizar">
       </fieldset>
     </form>
-    <button type="button" name="button" onclick="location.href='listadoUsuarios-07.php'">Volver</button>
-    <script src="comprobarActualizar.js" charset="utf-8"></script>
+    <button type="button" name="button" onclick="location.href='listadoUsuarios-08.php'">Volver</button>
+    <script src="js/comprobarActualizar.js" charset="utf-8"></script>
   </body>
 </html>

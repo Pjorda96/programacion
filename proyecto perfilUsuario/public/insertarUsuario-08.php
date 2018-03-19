@@ -1,5 +1,6 @@
 <?php
-require_once "Db.php";
+use Daw\Models\Db as Db;
+require_once("./src/models/Db.php");
 $baseDatos=new Db();
 $baseDatos->conectar();
 ?>
@@ -8,11 +9,11 @@ $baseDatos->conectar();
   <head>
     <meta charset="utf-8">
     <title>Registro</title>
-    <link rel="stylesheet" href="perfilUsuario.css">
+    <link rel="stylesheet" href="css/perfilUsuario.css">
   </head>
   <body>
     <h1>CREAR PERFIL</h1>
-    <form method="post" onsubmit="return espaciosVacios() && return insertarUsuario()">
+    <form method="post" onsubmit="return js/espaciosVacios() && return insertarUsuario()">
       <fieldset class="caja">
         <legend>¿QUIEN ERES?</legend>
         <p>Nombre <b>*</b><br>
@@ -50,7 +51,7 @@ $baseDatos->conectar();
       </fieldset>
       <input type="submit" name="crear" value="Crear cuenta">
     </form>
-    <button type="button" name="button" onclick="location.href='listadoUsuarios-07.php'">Volver</button>
-    <script src="comprobarInsertar.js" charset="utf-8"></script>
+    <button type="button" name="button" onclick="location.href='listadoUsuarios-08.php'">Volver</button>
+    <script src="js/comprobarInsertar.js" charset="utf-8"></script>
   </body>
 </html>

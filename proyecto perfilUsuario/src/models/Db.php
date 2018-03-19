@@ -1,5 +1,6 @@
 <?php
-require_once "config.php";
+namespace Daw\Models;
+require_once("./config/config.php");
 /**
  *
  */
@@ -66,7 +67,7 @@ class Db
   public function insertarUsuario(){
     $insertar="insert into usuarios (nombre,apellidos,usuario,contrasenya,edad,curso) values ('".$_POST['nombre']."','".$_POST['apellidos']."', '".$_POST['usuario']."','".$_POST['contrasenya']."','".$_POST['edad']."', '".$_POST['curso']."')";
     $registro = $juegos->query($insertar);
-    header('Location: listadoUsuarios-07.php');
+    header('Location: ../../public/listadoUsuarios-08.php');
   }
 
   public function actualizarUsuario(){
@@ -74,13 +75,13 @@ class Db
     $_POST['apellidos']."',edad='".$_POST['edad']."',curso='".$_POST['curso']."'
     where usuario='".$_POST['usuario']."';";
     $registro = $conector->query($actualizar);
-    header('Location: listadoUsuarios-07.php');
+    header('Location: ../../public/listadoUsuarios-08.php');
   }
 
   public function borrarUsuario(){
     $borrar="delete from usuarios where usuario='".$_POST['usuario']."';";
     $registro = $conector->query($borrar);
-    header('Location: listadoUsuarios-07.php');
+    header('Location: ../../public/listadoUsuarios-08.php');
   }
 
   public function getConector(){
