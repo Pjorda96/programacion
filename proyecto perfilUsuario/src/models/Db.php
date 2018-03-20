@@ -1,6 +1,6 @@
 <?php
 namespace Daw\Models;
-require_once("./config/config.php");
+use Daw\config\Config;
 /**
  *
  */
@@ -23,7 +23,7 @@ class Db
   function __construct()
   {
     global $config;
-    $this->server=$config["host"];
+    $this->server=Config::CFG_HOST;
     $this->user=$config["user"];
     $this->pass=$config["pass"];
     $this->db=$config["db"];
@@ -53,7 +53,7 @@ class Db
 
   public function leerDatos(){
     $consulta="select nombre,apellidos,usuario,edad,curso from usuarios where usuario='".$_POST['usuario']."'";
-    $consultaUsuario = $conector->query($consulta);
+    $consultaUsuario = $this->conector->query($consulta);
 
     foreach ($consultaUsuario as $fila) {
       $this->usuario=$_POST['usuario'];
@@ -66,7 +66,7 @@ class Db
 
   public function insertarUsuario(){
     $insertar="insert into usuarios (nombre,apellidos,usuario,contrasenya,edad,curso) values ('".$_POST['nombre']."','".$_POST['apellidos']."', '".$_POST['usuario']."','".$_POST['contrasenya']."','".$_POST['edad']."', '".$_POST['curso']."')";
-    $registro = $juegos->query($insertar);
+    $registro = $this->conector->query($insertar);
     header('Location: ../../public/listadoUsuarios-08.php');
   }
 
@@ -74,13 +74,13 @@ class Db
     $actualizar="update usuarios set nombre='".$_POST['nombre']."',apellidos='".
     $_POST['apellidos']."',edad='".$_POST['edad']."',curso='".$_POST['curso']."'
     where usuario='".$_POST['usuario']."';";
-    $registro = $conector->query($actualizar);
+    $registro = $this->conector->query($actualizar);
     header('Location: ../../public/listadoUsuarios-08.php');
   }
 
   public function borrarUsuario(){
     $borrar="delete from usuarios where usuario='".$_POST['usuario']."';";
-    $registro = $conector->query($borrar);
+    $registro = $this->conector->query($borrar);
     header('Location: ../../public/listadoUsuarios-08.php');
   }
 
