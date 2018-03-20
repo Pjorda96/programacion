@@ -40,7 +40,7 @@ class Db
 
   public function lista(){
     $usuarios="select usuario from usuarios";
-    $resultado = $conector->query($usuarios);
+    $resultado = $this->conector->query($usuarios);
     foreach ($resultado as $fila) {
       echo '"<option value="';
       echo $fila['usuario'];
