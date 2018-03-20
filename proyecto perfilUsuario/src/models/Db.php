@@ -1,5 +1,6 @@
 <?php
-namespace Daw\Models;
+namespace Daw\models;
+require_once __DIR__.'../vendor/autoload.php';
 use Daw\config\Config;
 /**
  *
@@ -24,9 +25,9 @@ class Db
   {
     global $config;
     $this->server=Config::CFG_HOST;
-    $this->user=$config["user"];
-    $this->pass=$config["pass"];
-    $this->db=$config["db"];
+    $this->user=Config::CFG_USER;
+    $this->pass=Config::CFG_PASS;
+    $this->db=Config::CFG_DB;
   }
 
   function conectar(){

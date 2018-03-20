@@ -1,7 +1,6 @@
 <?php
 require_once __DIR__.'/../vendor/autoload.php';
-use Daw\models\Table as Table;
-use Daw\Models\Db as Db;
+use Daw\models\Db as Db;
 
 $baseDatos=new Db();
 $baseDatos->conectar();

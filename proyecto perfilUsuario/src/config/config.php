@@ -8,14 +8,11 @@ class Config
 
   $config=[];
   const CFG_HOST="localhost";
-  $config["host"]="localhost";
-  $config["user"]="root";
-  $config["pass"]="";
-  $config["db"]="juegos";
+  const CFG_USER="root";
+  const CFG_PASS="";
+  const CFG_DB="juegos";
   function __construct(argument)
   {
-    # code...
+
   }
 }
-
-?>
