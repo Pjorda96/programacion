@@ -1,6 +1,6 @@
 <?php
 require_once __DIR__.'/../vendor/autoload.php';
-use Daw\Models\Db as Db;
+use Daw\models\Db as Db;
 
 $baseDatos=new Db();
 $baseDatos->conectar();
@@ -14,7 +14,7 @@ $baseDatos->conectar();
   </head>
   <body>
     <h1>CREAR PERFIL</h1>
-    <form method="post" onsubmit="return js/espaciosVacios() && return insertarUsuario()">
+    <form method="post" onsubmit="return js/espaciosVacios() && $baseDatos->insertarUsuario()">
       <fieldset class="caja">
         <legend>¿QUIEN ERES?</legend>
         <p>Nombre <b>*</b><br>

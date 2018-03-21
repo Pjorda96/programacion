@@ -1,7 +1,8 @@
 <?php
 namespace Daw\models;
-require_once __DIR__.'../vendor/autoload.php';
+
 use Daw\config\Config;
+use mysqli;
 /**
  *
  */

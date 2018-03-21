@@ -24,7 +24,7 @@ $baseDatos->conectar();
             <?php
             $baseDatos->lista();
             ?>
-          </select><br>
+          </select>
           <input type="submit" value="Empezar"></input>
           <!--onclick="form.action = 'ahorcado.php'; return true;"
           <input type="submit" value="Modificar" onclick="form.action = 'actualizarUsuario.php'; return true;"></input>
