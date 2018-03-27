@@ -1,6 +1,6 @@
 <?php
 require_once __DIR__.'/../vendor/autoload.php';
-use Daw\models\Db as Db;
+use Daw\models\Db;
 
 $baseDatos=new Db();
 $baseDatos->conectar();
@@ -14,24 +14,24 @@ $baseDatos->conectar();
   </head>
   <body>
     <h1>MODIFICAR USUARIO</h1>
-    <form name="enviar" method="post"  onsubmit="return js/actualizarBlanco() && return actualizarUsuario()">
+    <form name="enviar" method="post"  onsubmit="return js/actualizarBlanco() && return $baseDatos->actualizarUsuario()">
       <fieldset>
         <?php
         $baseDatos->leerDatos();
         ?>
         <p>Nombre de usuario <b>*</b><br>
-          <input type="text" name="usuario" value="<?=$usuario?>" readonly></p>
+          <input type="text" name="usuario" value="<?=$baseDatos->getUsuario()?>" readonly></p>
         <fieldset class="caja">
           <legend>¿QUIEN ERES?</legend>
           <p>Nombre <b>*</b><br>
-          <input type="text" name="nombre" value="<?=$nombre?>" id="nuevonombre" required></p>
+          <input type="text" name="nombre" value="<?=$baseDatos->getNombre()?>" id="nuevonombre" required></p>
           <p>Apellidos <br>
-            <input type="text" name="apellidos" value="<?=$apellidos?>" id="nuevoapellido" ></p>
+            <input type="text" name="apellidos" value="<?=$baseDatos->getApellidos()?>" id="nuevoapellido" ></p>
           <p>Año de nacimiento: <br>
-          <input type="text" name="edad" value="<?=$edad?>" id="nuevoedad" ></p>
+          <input type="text" name="edad" value="<?=$baseDatos->getEdad()?>" id="nuevoedad" ></p>
           <p>Curso <br>
             <select name="curso" id="nuevocurso" >
-              <option value="<?=$curso?>"><?=$curso?></option>
+              <option value="<?=$baseDatos->getCurso()?>"><?=$baseDatos->getCurso()?></option>
               <option value="2daw">2º DAW</option>
               <option value="1daw">1º DAW</option>
               <option value="bachiller">Bachiller</option>

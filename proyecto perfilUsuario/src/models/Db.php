@@ -55,14 +55,15 @@ class Db
 
   public function leerDatos(){
     $consulta="select nombre,apellidos,usuario,edad,curso from usuarios where usuario='".$_POST['usuario']."'";
+    echo $consulta;
     $consultaUsuario = $this->conector->query($consulta);
+    $this->usuario=$_POST['usuario'];
 
     foreach ($consultaUsuario as $fila) {
-      $this->usuario=$_POST['usuario'];
-      $this->nombre=setNombre($fila['nombre']);
-      $this->apellidos=setApellidos($fila['apellidos']);
-      $this->edad=setEdad($fila['edad']);
-      $this->curso=setCurso($fila['curso']);
+      $this->nombre=$fila['nombre'];
+      $this->apellidos=$fila['apellidos'];
+      $this->edad=$fila['edad'];
+      $this->curso=$fila['curso'];
     }
   }
 
@@ -81,7 +82,7 @@ class Db
   }
 
   public function borrarUsuario(){
-    $borrar="delete from usuarios where usuario='".$_POST['usuario']."';";
+    $borrar="delete from usuarios where usuario='".$_POST['usuario']."'";
     $registro = $this->conector->query($borrar);
     header('Location: ../../public/listadoUsuarios-08.php');
   }

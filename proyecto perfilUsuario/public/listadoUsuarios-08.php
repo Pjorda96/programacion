@@ -1,6 +1,6 @@
 <?php
 require_once __DIR__.'/../vendor/autoload.php';
-use Daw\models\Db as Db;
+use Daw\models\Db;
 
 $baseDatos=new Db();
 $baseDatos->conectar();
@@ -41,7 +41,7 @@ $baseDatos->conectar();
       <!--borrar usuario-->
       <fielset>
         <legend>Borrar usuario.</legend>
-        <form class="user" method="post" onsubmit="return js/borrarUsuario()">
+        <form class="user" method="post" onsubmit="return js/borrarUsuario() && $baseDatos->borrarUsuario()">
           <select class="" name="usuario">
             <option value="">--Selecciona uno--</option>;
             <?php
