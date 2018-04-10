@@ -70,7 +70,6 @@ class Db
   public function insertarUsuario(){
     $insertar="insert into usuarios (nombre,apellidos,usuario,contrasenya,edad,curso) values ('".$_POST['nombre']."','".$_POST['apellidos']."', '".$_POST['usuario']."','".$_POST['contrasenya']."','".$_POST['edad']."', '".$_POST['curso']."')";
     $registro = $this->conector->query($insertar);
-    header('Location: ../../public/listadoUsuarios-08.php');
   }
 
   public function actualizarUsuario(){
@@ -78,13 +77,11 @@ class Db
     $_POST['apellidos']."',edad='".$_POST['edad']."',curso='".$_POST['curso']."'
     where usuario='".$_POST['usuario']."';";
     $registro = $this->conector->query($actualizar);
-    header('Location: ../../public/listadoUsuarios-08.php');
   }
 
   public function borrarUsuario($borrado){
     $borrar="delete from usuarios where usuario='".$borrado."'";
     $registro = $this->conector->query($borrar);
-    header('Location: ../../public/listadoUsuarios-08.php');
   }
 
   public function getConector(){

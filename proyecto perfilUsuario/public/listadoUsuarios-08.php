@@ -45,9 +45,9 @@ if (isset($_POST["borrar"])){
       <!--borrar usuario-->
       <fielset>
         <legend>Borrar usuario.</legend>
-        <form class="user" method="post" action="listadoUsuarios-08.php" >
+        <form class="user" method="post" action="" >
           <select class="" name="usuario">
-            <option value="">--Selecciona uno--</option>;
+            <option value="">--Selecciona uno--</option>
             <?php
             $baseDatos->lista();
             ?>
