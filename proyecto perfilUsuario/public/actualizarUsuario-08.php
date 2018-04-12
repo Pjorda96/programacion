@@ -14,7 +14,7 @@ $baseDatos->conectar();
   </head>
   <body>
     <h1>MODIFICAR USUARIO</h1>
-    <form name="enviar" method="post"  onsubmit="return js/actualizarBlanco() && return $baseDatos->actualizarUsuario()">
+    <form name="enviar" method="post" action="listadoUsuarios-08.php" onsubmit="return js/actualizarBlanco()">
       <fieldset>
         <?php
         $baseDatos->leerDatos();
@@ -39,7 +39,7 @@ $baseDatos->conectar();
               <option value="primaria">Primaria</option>
             </select></p>
         </fieldset>
-        <input type="submit" class="actualizar" name="actualizar" value="Actualizar">
+        <input type="submit" class="actualizar" name="modificar" value="Actualizar">
       </fieldset>
     </form>
     <button type="button" name="button" onclick="location.href='listadoUsuarios-08.php'">Volver</button>

@@ -67,15 +67,17 @@ class Db
     }
   }
 
-  public function insertarUsuario(){
-    $insertar="insert into usuarios (nombre,apellidos,usuario,contrasenya,edad,curso) values ('".$_POST['nombre']."','".$_POST['apellidos']."', '".$_POST['usuario']."','".$_POST['contrasenya']."','".$_POST['edad']."', '".$_POST['curso']."')";
+  public function insertarUsuario($nombre,$apellidos,$edad,$curso,$usuario,$contrasenya){
+    $insertar="insert into usuarios (nombre,apellidos,edad,curso,usuario,contrasenya) values
+    ('".$nombre."','".$apellidos."','".$edad."','".$curso."','".$usuario."','".$contrasenya."')";
+    //echo $insertar;
     $registro = $this->conector->query($insertar);
   }
 
-  public function actualizarUsuario(){
-    $actualizar="update usuarios set nombre='".$_POST['nombre']."',apellidos='".
-    $_POST['apellidos']."',edad='".$_POST['edad']."',curso='".$_POST['curso']."'
-    where usuario='".$_POST['usuario']."';";
+  public function actualizarUsuario($usuario,$nombre,$apellidos,$edad,$curso){
+    $actualizar="update usuarios set nombre='".$nombre."',apellidos='".
+    $apellidos."',edad='".$edad."',curso='".$curso."'
+    where usuario='".$usuario."';";
     $registro = $this->conector->query($actualizar);
   }
 

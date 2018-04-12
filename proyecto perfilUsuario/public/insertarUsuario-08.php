@@ -14,7 +14,7 @@ $baseDatos->conectar();
   </head>
   <body>
     <h1>CREAR PERFIL</h1>
-    <form method="post" onsubmit="return js/espaciosVacios() && $baseDatos->insertarUsuario()">
+    <form method="post" action="listadoUsuarios-08.php">
       <fieldset class="caja">
         <legend>¿QUIEN ERES?</legend>
         <p>Nombre <b>*</b><br>

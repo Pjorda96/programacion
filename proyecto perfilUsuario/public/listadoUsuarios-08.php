@@ -5,8 +5,14 @@ use Daw\models\Db;
 $baseDatos=new Db();
 $baseDatos->conectar();
 
+if (isset($_POST["crear"])){
+  $baseDatos->insertarUsuario($_POST['nombre'],$_POST['apellidos'],$_POST['edad'],$_POST['curso'],$_POST['usuario'],$_POST['contrasenya']);
+}
 if (isset($_POST["borrar"])){
-  $baseDatos->borrarUsuario($_POST["nombre"]);
+  $baseDatos->borrarUsuario($_POST["usuario"]);
+}
+if (isset($_POST["modificar"])){
+  $baseDatos->actualizarUsuario($_POST["usuario"],$_POST["nombre"],$_POST["apellidos"],$_POST["edad"],$_POST["curso"]);
 }
 ?>
 <!DOCTYPE html>
