@@ -23,24 +23,7 @@ if (isset($_POST["modificar"])){
     <link rel="stylesheet" href="css/perfilUsuario.css">
   </head>
   <body>
-    <h1>BIENVENIDO AL AHORCADO</h1>
-    <br><br>
-      <!--formulario para elegir usuario existente-->
-      <fielset>
-        <legend>Selecciona tu usuario.</legend>
-        <form class="form" action="" method="post" name="form">
-          <select class="" name="usuario">
-            <option value="">--Selecciona uno--</option>;
-            <?php
-            $baseDatos->lista();
-            ?>
-          </select>
-          <input type="submit" value="Empezar"></input>
-          <!--onclick="form.action = 'ahorcado.php'; return true;"
-          <input type="submit" value="Modificar" onclick="form.action = 'actualizarUsuario.php'; return true;"></input>
-          <input type="submit" value="Borrar" onclick="form.action = 'borrarUsuario.php'; return true;"></input>-->
-        </form>
-      </fielset>
+    <h1>PANEL DE ADMINISTRADOR</h1>
     <br><br>
       <!--nuevo usuario-->
       <fielset>
