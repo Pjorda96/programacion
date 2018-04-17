@@ -1,9 +1,12 @@
 <?php
 require_once __DIR__.'/../vendor/autoload.php';
 use Daw\models\Db;
+use Daw\models\Session;
 
 $baseDatos=new Db();
 $baseDatos->conectar();
+
+$sesion= new Session();
 
 if (isset($_POST["crear"])){
   $baseDatos->insertarUsuario($_POST['nombre'],$_POST['apellidos'],$_POST['edad'],$_POST['curso'],$_POST['usuario'],$_POST['contrasenya']);
@@ -58,5 +61,7 @@ if (isset($_POST["modificar"])){
           <input type="submit" value="Modificar"></input>
         </form>
       </fielset>
+      <br><br>
+      <button type="button" name="logout" onclick="<?=$sesion->cerrarSesion(); ?>">Log out</button>
   </body>
 </html>

@@ -1,9 +1,21 @@
 <?php
 require_once __DIR__.'/../vendor/autoload.php';
 use Daw\models\Db;
+use Daw\models\Session;
 
 $baseDatos=new Db();
 $baseDatos->conectar();
+
+$sesion= new Session();
+if (!isset($_SESSION['user'])) {
+  $_SESSION['user'] = "no";
+} else if (isset($_POST['empezar'])) {
+  if ($_POST['usuario']=="admin"){
+    header('Location: listadoUsuarios-09.php');
+  }//else {
+    //header('Location: ahorcado.php/?usuario='.$_GET["usuario"]);
+  //}
+}
 ?>
 <!DOCTYPE html>
 <html>
@@ -25,7 +37,7 @@ $baseDatos->conectar();
             $baseDatos->lista();
             ?>
           </select>
-          <input type="submit" value="Empezar"></input>
+          <input type="submit" name="empezar" value="Empezar"></input>
         </form>
       </fielset>
   </body>
