@@ -8,13 +8,19 @@ $baseDatos->conectar();
 
 $sesion= new Session();
 if (!isset($_SESSION['user'])) {
-  $_SESSION['user'] = "no";
-} else if (isset($_POST['empezar'])) {
+  $_SESSION['user'] = "";
+  print_r($_SESSION);
+}
+
+if (isset($_POST['empezar'])) {
   if ($_POST['usuario']=="admin"){
+    print_r($_SESSION);
     header('Location: listadoUsuarios-09.php');
-  }//else {
+  }else {
+    $_SESSION['user'] = $_POST['usuario'];
+    print_r($_SESSION);
     //header('Location: ahorcado.php/?usuario='.$_GET["usuario"]);
-  //}
+  }
 }
 ?>
 <!DOCTYPE html>

@@ -11,9 +11,9 @@ class Session
     session_start();
   }
 
-  public static function cerrarSesion(){
+  public function cerrarSesion(){
     $_SESSION=[]; //borrar todos los datos
     session_destroy();
-    header('Location: index.php');
+    //header('Location: index.php');
   }
 }
