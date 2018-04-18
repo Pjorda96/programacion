@@ -62,6 +62,6 @@ if (isset($_POST["modificar"])){
         </form>
       </fielset>
       <br><br>
-      <button type="button" name="logout" onclick="<?=$sesion->cerrarSesion();?>">Log out</button>
+      <button type="button" name="logout" onclick="location.href='cerrado.php'" >Log out</button>
   </body>
 </html>
