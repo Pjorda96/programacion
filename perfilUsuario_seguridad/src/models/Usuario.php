@@ -5,8 +5,8 @@
  * Date: 19/04/2018
  * Time: 10:37
  */
-
 namespace Daw\models;
+use Daw\models\Db;
 
 
 class Usuario extends Db

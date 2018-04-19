@@ -1,8 +1,5 @@
 <?php
-namespace Daw\models;
-
 use Daw\config\Config;
-use mysqli;
 /**
  *
  */
