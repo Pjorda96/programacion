@@ -13,7 +13,8 @@ if (!isset($_SESSION['user'])) {
 }
 
 if (isset($_POST['empezar'])) {
-  if ($_POST['usuario']=="admin"){
+  if ($_POST['usuario']==="admin"){
+    $_SESSION['usuario']="admin";
     print_r($_SESSION);
     header('Location: listadoUsuarios-09.php');
   }else {

@@ -6,7 +6,11 @@ use Daw\models\Session;
 $baseDatos=new Db();
 $baseDatos->conectar();
 
-$sesion= new Session();
+session_start();
+if ($_SESSION['usuario']!="admin"){
+    print_r($_SESSION);
+    header('Location: cerrado.php');
+}
 
 if (isset($_POST["crear"])){
   $baseDatos->insertarUsuario($_POST['nombre'],$_POST['apellidos'],$_POST['edad'],$_POST['curso'],$_POST['usuario'],$_POST['contrasenya']);

@@ -1,9 +1,15 @@
 <?php
 require_once __DIR__.'/../vendor/autoload.php';
 use Daw\models\Db;
+use Daw\models\Session;
 
 $baseDatos=new Db();
 $baseDatos->conectar();
+
+session_start();
+if ($_SESSION['usuario']!="admin"){
+    header('Location: cerrado.php');
+}
 ?>
 <!DOCTYPE html>
 <html>
