@@ -11,9 +11,6 @@ namespace Daw\models;
 
 class Usuario extends Db
 {
-    //Propiedad conector
-    private $conector;
-
     function __construct()
     {
         parent::conectar();
@@ -24,7 +21,7 @@ class Usuario extends Db
      */
     public function lista(){
         $usuarios="select usuario from usuarios";
-        $resultado = $this->conector->query($usuarios);
+        $resultado = parent::consulta($usuarios);
         foreach ($resultado as $fila) {
             echo "<option value=";
             echo $fila['usuario'];
@@ -66,23 +63,5 @@ class Usuario extends Db
         $borrar="delete from usuarios where usuario='".$borrado."'";
         $registro = $this->conector->query($borrar);
     }
-
-    /**
-     * @return mixed
-     */
-    public function getConector()
-    {
-        return $this->conector;
-    }
-
-    /**
-     * @param mixed $conector
-     */
-    public function setConector($conector): void
-    {
-        $this->conector = $conector;
-    }
-
-
 
 }

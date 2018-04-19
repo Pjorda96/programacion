@@ -20,6 +20,9 @@ class Db
   private $edad=0;
   private $curso="";
 
+    //Propiedad conector
+    private $conector;
+
   function __construct()
   {
     global $config;
@@ -29,7 +32,7 @@ class Db
     $this->db=Config::CFG_DB;
   }
 
-  function conectar(){
+  public function conectar(){
     $conectorTmp = new mysqli ($this->server,$this->user,
                                   $this->pass,$this->db) ;
     if ($conectorTmp->connect_errno) {
@@ -38,8 +41,18 @@ class Db
       $this->conector=$conectorTmp;
     }
   }
+  public function consulta($consulta){
+      return $this->conector->query($consulta);
+  }
 
-
+  public function getConector()
+  {
+      return $this->conector;
+  }
+  public function setConector($conector)
+  {
+      $this->conector = $conector;
+  }
   public function setServer($server)
   {
     $this->server = $server;

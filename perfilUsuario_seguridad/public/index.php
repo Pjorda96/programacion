@@ -1,10 +1,9 @@
 <?php
 require_once __DIR__.'/../vendor/autoload.php';
-use Daw\models\Db;
+use Daw\models\Usuario;
 use Daw\models\Session;
 
-$baseDatos=new Db();
-$baseDatos->conectar();
+$baseDatos=new Usuario();
 
 $sesion= new Session();
 if (!isset($_SESSION['user'])) {
