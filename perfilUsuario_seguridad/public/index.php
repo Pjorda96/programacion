@@ -4,7 +4,6 @@ use Daw\models\Usuario;
 use Daw\models\Session;
 
 $baseDatos=new Usuario();
-
 $sesion= new Session();
 if (!isset($_SESSION['user'])) {
   $_SESSION['user'] = "";

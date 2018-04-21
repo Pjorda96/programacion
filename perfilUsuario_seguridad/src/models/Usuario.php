@@ -4,25 +4,33 @@
  * User: Pablo
  * Date: 19/04/2018
  * Time: 10:37
-<<<<<<< HEAD
-
-=======
  */
->>>>>>> origin/master
+
 namespace Daw\models;
 use Daw\models\Db;
-
-
+use mysqli;
+/**
+ *
+ */
 class Usuario extends Db
 {
+
+    private $conector="";
+
+    private $usuario="";
+    private $nombre="";
+    private $apellidos="";
+    private $edad=0;
+    private $curso="";
+
+
     function __construct()
     {
         parent::conectar();
+        $this->setConector(parent::getConector());
     }
 
-    /**
-     *
-     *
+
     public function lista(){
         $usuarios="select usuario from usuarios";
         $resultado = parent::consulta($usuarios);
@@ -67,5 +75,53 @@ class Usuario extends Db
         $borrar="delete from usuarios where usuario='".$borrado."'";
         $registro = $this->conector->query($borrar);
     }
-
+    
+    public function getConector()
+    {
+        return $this->conector;
+    }
+    public function setConector($conector)
+    {
+        $this->conector = $conector;
+    }
+    public function getUsuario()
+    {
+        return $this->usuario;
+    }
+    public function setUsuario($usuario)
+    {
+        $this->usuario = $usuario;
+    }
+    public function getNombre()
+    {
+        return $this->nombre;
+    }
+    public function setNombre($nombre)
+    {
+        $this->nombre = $nombre;
+    }
+    public function getApellidos()
+    {
+        return $this->apellidos;
+    }
+    public function setApellidos($apellidos)
+    {
+        $this->apellidos = $apellidos;
+    }
+    public function getEdad()
+    {
+        return $this->edad;
+    }
+    public function setEdad($edad)
+    {
+        $this->edad = $edad;
+    }
+    public function getCurso()
+    {
+        return $this->curso;
+    }
+    public function setCurso($curso)
+    {
+        $this->curso = $curso;
+    }
 }
