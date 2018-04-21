@@ -1,12 +1,9 @@
 <?php
-namespace Daw\models;
-
 use Daw\config\Config;
-use mysqli;
 /**
  *
  */
-class Db
+class Usuario
 {
   //Propiedades de conexion
   private $server="";

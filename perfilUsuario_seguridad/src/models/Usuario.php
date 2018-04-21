@@ -4,9 +4,9 @@
  * User: Pablo
  * Date: 19/04/2018
  * Time: 10:37
- */
 
 namespace Daw\models;
+use Daw\models\Db;
 
 
 class Usuario extends Db
@@ -18,7 +18,7 @@ class Usuario extends Db
 
     /**
      *
-     */
+     *
     public function lista(){
         $usuarios="select usuario from usuarios";
         $resultado = parent::consulta($usuarios);
