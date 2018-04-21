@@ -4,7 +4,11 @@
  * User: Pablo
  * Date: 19/04/2018
  * Time: 10:37
+<<<<<<< HEAD
 
+=======
+ */
+>>>>>>> origin/master
 namespace Daw\models;
 use Daw\models\Db;
 
