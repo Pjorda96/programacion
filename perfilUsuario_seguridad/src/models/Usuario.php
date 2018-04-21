@@ -27,13 +27,12 @@ class Usuario extends Db
     function __construct()
     {
         parent::conectar();
-        $this->setConector(parent::getConector());
     }
 
 
     public function lista(){
         $usuarios="select usuario from usuarios";
-        $resultado = parent::consulta($usuarios);
+        $resultado = $this->conector->query($usuarios);
         foreach ($resultado as $fila) {
             echo "<option value=";
             echo $fila['usuario'];
@@ -75,7 +74,7 @@ class Usuario extends Db
         $borrar="delete from usuarios where usuario='".$borrado."'";
         $registro = $this->conector->query($borrar);
     }
-    
+
     public function getConector()
     {
         return $this->conector;
