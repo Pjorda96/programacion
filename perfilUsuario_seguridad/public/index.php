@@ -38,7 +38,7 @@ if (isset($_POST['empezar'])) {
         <legend>Selecciona tu usuario.</legend>
         <form class="form" action="" method="post" name="form">
           <select class="" name="usuario">
-            <option value="">--Selecciona uno--</option>;
+            <option value="">--Selecciona uno--</option>
             <?php
             $baseDatos->lista();
             ?>

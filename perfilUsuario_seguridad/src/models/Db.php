@@ -42,6 +42,11 @@ class Db
         }
     }
 
+    public function consultar($consulta){
+        $this->conector->query($consulta);
+        return $this->conector;
+    }
+
 
     public function getConector()
     {

@@ -15,8 +15,6 @@ use mysqli;
 class Usuario extends Db
 {
 
-    private $conector="";
-
     private $usuario="";
     private $nombre="";
     private $apellidos="";
@@ -32,7 +30,7 @@ class Usuario extends Db
 
     public function lista(){
         $usuarios="select usuario from usuarios";
-        $resultado = $this->conector->query($usuarios);
+        $resultado = Db::consultar($usuarios);
         foreach ($resultado as $fila) {
             echo "<option value=";
             echo $fila['usuario'];
@@ -45,7 +43,7 @@ class Usuario extends Db
     public function leerDatos(){
         $consulta="select nombre,apellidos,usuario,edad,curso from usuarios where usuario='".$_POST['usuario']."'";
         //echo $consulta;
-        $consultaUsuario = $this->conector->query($consulta);
+        $consultaUsuario = Db::consultar($consulta);
         $this->usuario=$_POST['usuario'];
 
         foreach ($consultaUsuario as $fila) {
@@ -60,29 +58,21 @@ class Usuario extends Db
         $insertar="insert into usuarios (nombre,apellidos,edad,curso,usuario,contrasenya) values
     ('".$nombre."','".$apellidos."','".$edad."','".$curso."','".$usuario."','".$contrasenya."')";
         //echo $insertar;
-        $registro = $this->conector->query($insertar);
+        $registro = Db::consultar($insertar);
     }
 
     public function actualizarUsuario($usuario,$nombre,$apellidos,$edad,$curso){
         $actualizar="update usuarios set nombre='".$nombre."',apellidos='".
             $apellidos."',edad='".$edad."',curso='".$curso."'
-    where usuario='".$usuario."';";
-        $registro = $this->conector->query($actualizar);
+        where usuario='".$usuario."';";
+        $registro = Db::consultar($actualizar);
     }
 
     public function borrarUsuario($borrado){
         $borrar="delete from usuarios where usuario='".$borrado."'";
-        $registro = $this->conector->query($borrar);
+        $registro = Db::consultar($borrar);
     }
 
-    public function getConector()
-    {
-        return $this->conector;
-    }
-    public function setConector($conector)
-    {
-        $this->conector = $conector;
-    }
     public function getUsuario()
     {
         return $this->usuario;
