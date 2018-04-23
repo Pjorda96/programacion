@@ -7,8 +7,6 @@
  */
 
 namespace Daw\models;
-use Daw\models\Db;
-use mysqli;
 /**
  *
  */
