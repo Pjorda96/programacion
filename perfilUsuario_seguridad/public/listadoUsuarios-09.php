@@ -7,7 +7,7 @@ $baseDatos=new Usuario();
 
 session_start();
 if ($_SESSION['usuario']!="admin"){
-    print_r($_SESSION);
+    //print_r($_SESSION);
     header('Location: cerrado.php');
 }
 

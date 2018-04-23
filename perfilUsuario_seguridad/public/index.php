@@ -8,7 +8,7 @@ $baseDatos=new Usuario();
 $sesion= new Session();
 if (!isset($_SESSION['user'])) {
   $_SESSION['user'] = "";
-  print_r($_SESSION);
+  //print_r($_SESSION);
 }
 
 if (isset($_POST['empezar'])) {

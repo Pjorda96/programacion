@@ -25,7 +25,6 @@ class Db
 
     function __construct()
     {
-        global $config;
         $this->server=Config::CFG_HOST;
         $this->user=Config::CFG_USER;
         $this->pass=Config::CFG_PASS;
@@ -43,8 +42,8 @@ class Db
     }
 
     public function consultar($consulta){
-        $this->conector->query($consulta);
-        return $this->conector;
+        $resultado=$this->conector->query($consulta);
+        return $resultado;
     }
 
 

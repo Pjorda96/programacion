@@ -24,26 +24,27 @@ class Usuario extends Db
 
     function __construct()
     {
+        parent::__construct();
         parent::conectar();
     }
 
 
     public function lista(){
         $usuarios="select usuario from usuarios";
-        $resultado = Db::consultar($usuarios);
+        $resultado = parent::consultar($usuarios);
         foreach ($resultado as $fila) {
-            echo "<option value=";
+            echo "<option value='";
             echo $fila['usuario'];
-            echo ">";
+            echo "'>";
             echo $fila['usuario'];
-            echo "</option><br>";
+            echo "</option>";
         }
     }
 
     public function leerDatos(){
         $consulta="select nombre,apellidos,usuario,edad,curso from usuarios where usuario='".$_POST['usuario']."'";
         //echo $consulta;
-        $consultaUsuario = Db::consultar($consulta);
+        $consultaUsuario = parent::consultar($consulta);
         $this->usuario=$_POST['usuario'];
 
         foreach ($consultaUsuario as $fila) {
@@ -58,19 +59,19 @@ class Usuario extends Db
         $insertar="insert into usuarios (nombre,apellidos,edad,curso,usuario,contrasenya) values
     ('".$nombre."','".$apellidos."','".$edad."','".$curso."','".$usuario."','".$contrasenya."')";
         //echo $insertar;
-        $registro = Db::consultar($insertar);
+        $registro = parent::consultar($insertar);
     }
 
     public function actualizarUsuario($usuario,$nombre,$apellidos,$edad,$curso){
         $actualizar="update usuarios set nombre='".$nombre."',apellidos='".
             $apellidos."',edad='".$edad."',curso='".$curso."'
         where usuario='".$usuario."';";
-        $registro = Db::consultar($actualizar);
+        $registro = parent::consultar($actualizar);
     }
 
     public function borrarUsuario($borrado){
         $borrar="delete from usuarios where usuario='".$borrado."'";
-        $registro = Db::consultar($borrar);
+        $registro = parent::consultar($borrar);
     }
 
     public function getUsuario()
