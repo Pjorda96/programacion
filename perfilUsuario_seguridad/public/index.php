@@ -10,18 +10,6 @@ if (!isset($_SESSION['user'])) {
   $_SESSION['user'] = "";
   //print_r($_SESSION);
 }
-
-if (isset($_POST['empezar'])) {
-  if ($_POST['usuario']==="admin"){
-    $_SESSION['usuario']="admin";
-    print_r($_SESSION);
-    header('Location: listadoUsuarios-09.php');
-  }else {
-    $_SESSION['user'] = $_POST['usuario'];
-    print_r($_SESSION);
-    //header('Location: ahorcado.php/?usuario='.$_GET["usuario"]);
-  }
-}
 ?>
 <!DOCTYPE html>
 <html>
@@ -36,7 +24,7 @@ if (isset($_POST['empezar'])) {
       <!--formulario para elegir usuario existente-->
       <fielset>
         <legend>Selecciona tu usuario.</legend>
-        <form class="form" action="" method="post" name="form">
+        <form class="form" action="ahorcado.php" method="post" name="form">
           <select class="" name="usuario">
             <option value="">--Selecciona uno--</option>
             <?php

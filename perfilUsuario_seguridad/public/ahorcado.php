@@ -6,13 +6,21 @@ use Daw\models\Session;
 $baseDatos=new Usuario();
 
 session_start();
-
+if (isset($_POST['empezar'])) {
+    if ($_POST['usuario']==="admin"){
+        $_SESSION['usuario']="admin";
+        header('Location: listadoUsuarios-09.php');
+    }else {
+        $_SESSION['user'] = $_POST['usuario'];
+    }
+}
 ?>
 <!DOCTYPE html>
 <html>
   <head>
     <meta charset="utf-8">
     <title>Ahorcado</title>
+    <link rel="stylesheet" href="css/perfilUsuario.css">
   </head>
   <body>
     <h1>Bienvenido al ahorcado</h1>
