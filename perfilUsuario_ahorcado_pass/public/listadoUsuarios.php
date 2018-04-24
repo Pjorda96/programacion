@@ -11,9 +11,6 @@ if ($_SESSION['usuario']!="admin"){
     header('Location: cerrado.php');
 }
 
-if (isset($_POST["crear"])){
-  $baseDatos->insertarUsuario($_POST['nombre'],$_POST['apellidos'],$_POST['edad'],$_POST['curso'],$_POST['usuario'],$_POST['contrasenya']);
-}
 if (isset($_POST["borrar"])){
   $baseDatos->borrarUsuario($_POST["usuario"]);
 }

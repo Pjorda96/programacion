@@ -1,14 +1,10 @@
 <?php
 require_once __DIR__.'/../vendor/autoload.php';
-use Daw\models\Usuario;
-use Daw\models\Session;
+use Daw\models\Login;
 
-$baseDatos=new Usuario();
-
-$sesion= new Session();
-if (!isset($_SESSION['user'])) {
-  $_SESSION['user'] = "";
-  //print_r($_SESSION);
+$login = new Login();
+if (isset($_POST["empezar"])) {
+    $login->validate();
 }
 ?>
 <!DOCTYPE html>
@@ -24,13 +20,11 @@ if (!isset($_SESSION['user'])) {
       <!--formulario para elegir usuario existente-->
       <fielset>
         <legend>Selecciona tu usuario.</legend>
-        <form class="form" action="ahorcado.php" method="post" name="form">
-          <select class="" name="usuario">
-            <option value="">--Selecciona uno--</option>
-            <?php
-            $baseDatos->lista();
-            ?>
-          </select>
+        <form class="form" action="" onsubmit="return comprobarLogin()" method="post" name="form">
+          <<p>Iniciar sesión como
+           <br><br>
+          <input type="text" name="usuario" id="usuario" placeholder="Usuario:">
+          <input type="password" name="password1" id="pass" placeholder="Contraseña:">
           <input type="submit" name="empezar" value="Empezar"></input>
         </form>
         <br><br>
@@ -40,5 +34,6 @@ if (!isset($_SESSION['user'])) {
             <button type="button" name="button" onclick="location.href='insertarUsuario.php'">Crear nuevo usuario</button>
         </fielset>
       </fielset>
+    <script src="js/login.js" charset="utf-8"></script>
   </body>
 </html>

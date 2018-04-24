@@ -1,13 +1,11 @@
 <?php
 require_once __DIR__.'/../vendor/autoload.php';
 use Daw\models\Usuario;
-use Daw\models\Session;
 
 $baseDatos=new Usuario();
-
-session_start();
-if ($_SESSION['usuario']!="admin"){
-    header('Location: cerrado.php');
+if (isset($_POST["crear"])){
+    $baseDatos->insertarUsuario($_POST['nombre'],$_POST['apellidos'],$_POST['edad'],$_POST['curso'],$_POST['usuario'],$_POST['contrasenya']);
+    header('Location: index.php');
 }
 ?>
 <!DOCTYPE html>
@@ -19,7 +17,7 @@ if ($_SESSION['usuario']!="admin"){
   </head>
   <body>
     <h1>CREAR PERFIL</h1>
-    <form method="post" action="listadoUsuarios.php">
+    <form method="post" action="" onsubmit="return espaciosVacios()">
       <fieldset class="caja">
         <legend>¿QUIEN ERES?</legend>
         <p>Nombre <b>*</b><br>
