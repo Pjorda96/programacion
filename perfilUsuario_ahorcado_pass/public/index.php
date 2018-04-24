@@ -33,6 +33,12 @@ if (!isset($_SESSION['user'])) {
           </select>
           <input type="submit" name="empezar" value="Empezar"></input>
         </form>
+        <br><br>
+        <!--nuevo usuario-->
+        <fielset>
+            <legend>Crear nuevo usuario.</legend>
+            <button type="button" name="button" onclick="location.href='insertarUsuario.php'">Crear nuevo usuario</button>
+        </fielset>
       </fielset>
   </body>
 </html>

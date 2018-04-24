@@ -31,12 +31,6 @@ if (isset($_POST["modificar"])){
   <body>
     <h1>PANEL DE ADMINISTRADOR</h1>
     <br><br>
-      <!--nuevo usuario-->
-      <fielset>
-        <legend>Crear nuevo usuario.</legend>
-        <button type="button" name="button" onclick="location.href='insertarUsuario.php'">Crear nuevo usuario</button>
-      </fielset>
-    <br><br>
       <!--borrar usuario-->
       <fielset>
         <legend>Borrar usuario.</legend>
