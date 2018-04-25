@@ -1,8 +1,8 @@
 <?php
 require_once __DIR__.'/../vendor/autoload.php';
-use Daw\models\Login;
+use Daw\models\Usuario;
 
-$login = new Login();
+$login = new Usuario();
 if (isset($_POST["empezar"])) {
     $login->validate();
 }
@@ -19,9 +19,8 @@ if (isset($_POST["empezar"])) {
     <br><br>
       <!--formulario para elegir usuario existente-->
       <fielset>
-        <legend>Selecciona tu usuario.</legend>
         <form class="form" action="" onsubmit="return comprobarLogin()" method="post" name="form">
-          <<p>Iniciar sesión como
+          <p>Iniciar sesión como
            <br><br>
           <input type="text" name="usuario" id="usuario" placeholder="Usuario:">
           <input type="password" name="password1" id="pass" placeholder="Contraseña:">
