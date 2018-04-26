@@ -4,7 +4,7 @@ use Daw\models\Usuario;
 
 $login = new Usuario();
 if (isset($_POST["empezar"])) {
-    $login->validate();
+    $login->validate($_POST["usuario"],$_POST["contrasenya"]);
 }
 ?>
 <!DOCTYPE html>
@@ -23,7 +23,7 @@ if (isset($_POST["empezar"])) {
           <p>Iniciar sesión como
            <br><br>
           <input type="text" name="usuario" id="usuario" placeholder="Usuario:">
-          <input type="password" name="password1" id="pass" placeholder="Contraseña:">
+          <input type="password" name="contrasenya" id="contrasenya" placeholder="Contraseña:">
           <input type="submit" name="empezar" value="Empezar"></input>
         </form>
         <br><br>

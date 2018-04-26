@@ -54,8 +54,9 @@ class Usuario extends Db
     }
 
     public function insertarUsuario($nombre,$apellidos,$edad,$curso,$usuario,$contrasenya){
+        $pass=hash("haval160,4", $contrasenya);
         $insertar="insert into usuarios (nombre,apellidos,edad,curso,usuario,contrasenya) values
-    ('".$nombre."','".$apellidos."','".$edad."','".$curso."','".$usuario."','".$contrasenya."')";
+    ('".$nombre."','".$apellidos."','".$edad."','".$curso."','".$usuario."','".$pass."')";
         //echo $insertar;
         $registro = parent::consultar($insertar);
     }
@@ -72,33 +73,22 @@ class Usuario extends Db
         $registro = parent::consultar($borrar);
     }
 
-    /*public function validate()
+    public function validate($usuario,$contrasenya)
     {
-        if (empty($_POST['username']) || empty($_POST['userlastname']) || empty($_POST['age']) || empty($_POST['course']) ||
-            empty($_POST['score']) || empty($_POST['email']) || empty($_POST['password1']) || empty($_POST['password2'])) {
-            echo "<br><p align = center>No dejes ningún campo vacío</p><br>";
-            echo "<p align = center><a href='InsertarUsuario.php'>Por favor vuelve a resgistrarte, gracias</a></p><br><br><br>";
-        } elseif ($_POST['password1'] != $_POST['password2']) {
-            echo "<br><p align = center>Las contraseñas no coinciden</p><br>";
-            echo "<p align = center><a href='InsertarUsuario.php'>Por favor vuelve a resgistrarte, gracias</a></p><br><br><br>";
-        } else {
-            $jugador = "SELECT * FROM juegos.usuarios WHERE nombre = '$_POST[username]'";
-            $comprobarJugador = $this->conector->query($jugador);
-            $contar = mysqli_num_rows($comprobarJugador);
-            if ($this->conector->connect_errno) {
-                echo "Fallo al conectar a MySQL: " .$conexion->connect_error;
-            } elseif ($contar >= 1) {
-                echo "<br><p align = center>El nick ya ha sido utilizado</p><br>";
-                echo "<p align = center><a href='InsertarUsuario.php'>Por favor vuelve a resgistrarte con otro nombre</a></p><br><br><br>";
-            } else {
-                if (!empty($_POST["actu"])) {
-                    $this->actualizar();
-                } else {
-                    $this->insertar();
-                }
-            }
+        $pass=hash("haval160,4", $contrasenya);
+
+        $passw="select contrasenya from usuarios where usuario='".$usuario."'";
+        $resultado = parent::consultar($passw);
+        foreach ($resultado as $fila) {
+            $contrasenyaDb= $fila['contrasenya'];
         }
-    }*/
+
+        if ($pass===$contrasenyaDb){
+            header('Location: ahorcado.php/?usuario='.$usuario);
+        }else {
+            header('Location: index.php');
+        }
+    }
 
     public function getUsuario()
     {
