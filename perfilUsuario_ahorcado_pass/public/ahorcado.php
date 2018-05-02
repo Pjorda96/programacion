@@ -7,12 +7,7 @@ $baseDatos=new Usuario();
 
 session_start();
 if (isset($_POST['empezar'])) {
-    if ($_POST['usuario']==="admin"){
-        $_SESSION['usuario']="admin";
-        header('Location: listadoUsuarios.php');
-    }else {
-        $_SESSION['user'] = $_POST['usuario'];
-    }
+    $_SESSION['user'] = $_GET['usuario'];
 }
 ?>
 <!DOCTYPE html>

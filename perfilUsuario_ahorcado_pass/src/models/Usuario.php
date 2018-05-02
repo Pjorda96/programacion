@@ -7,6 +7,9 @@
  */
 
 namespace Daw\models;
+
+session_start();
+
 /**
  *
  */
@@ -75,16 +78,22 @@ class Usuario extends Db
 
     public function validate($usuario,$contrasenya)
     {
-        $pass=hash("haval160,4", $contrasenya);
+        $pass = hash("haval160,4", $contrasenya);
 
-        $passw="select contrasenya from usuarios where usuario='".$usuario."'";
-        $resultado = parent::consultar($passw);
-        foreach ($resultado as $fila) {
-            $contrasenyaDb= $fila['contrasenya'];
-        }
+        $passw = "select contrasenya from usuarios where usuario='" . $usuario . "'";
+        //$resultado = parent::consultar($passw);
+        $contrasenyaDb = parent::consultar($passw);
+        /*foreach ($resultado as $fila) {
+            $contrasenyaDb = $fila['contrasenya'];
+        }*/
 
-        if ($pass===$contrasenyaDb){
-            header('Location: ahorcado.php/?usuario='.$usuario);
+        if ($pass === $contrasenyaDb) {
+            if ($usuario==="admin") {
+                $_SESSION['usuario'] = "admin";
+                header('Location: listadoUsuarios.php');
+            }else {
+                header('Location: ahorcado.php/?usuario=' . $usuario);
+            }
         }else {
             header('Location: index.php');
         }
