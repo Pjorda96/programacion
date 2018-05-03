@@ -4,11 +4,12 @@ use Daw\models\Usuario;
 use Daw\models\Session;
 
 $baseDatos=new Usuario();
+$sesion=new Session();
 
-session_start();
 if (isset($_POST['empezar'])) {
     $_SESSION['user'] = $_GET['usuario'];
 }
+$sesion->cerrarSesion();
 ?>
 <!DOCTYPE html>
 <html>
