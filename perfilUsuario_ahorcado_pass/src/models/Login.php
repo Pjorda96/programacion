@@ -35,6 +35,7 @@ class Login extends Db
                 header('Location: listadoUsuarios.php');
             }else {
                 $_SESSION['usuario'] = $usuario;
+                var_dump($_SESSION['usuario']);
                 header('Location: ahorcado.php/?usuario=' . $usuario);
             }
         }else {
