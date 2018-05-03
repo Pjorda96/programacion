@@ -1,8 +1,8 @@
 <?php
 require_once __DIR__.'/../vendor/autoload.php';
-use Daw\models\Usuario;
+use Daw\models\Login;
 
-$login = new Usuario();
+$login = new Login();
 if (isset($_POST["empezar"])) {
     $login->validate($_POST["usuario"],$_POST["contrasenya"]);
 }
