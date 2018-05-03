@@ -34,6 +34,7 @@ class Login extends Db
                 $_SESSION['usuario'] = "admin";
                 header('Location: listadoUsuarios.php');
             }else {
+                $_SESSION['usuario'] = $usuario;
                 header('Location: ahorcado.php/?usuario=' . $usuario);
             }
         }else {
