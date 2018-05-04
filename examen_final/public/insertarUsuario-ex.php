@@ -1,8 +1,8 @@
 <?php
 require_once __DIR__.'/../vendor/autoload.php';
-use Daw\models\Db;
+use Daw\models\Usuario;
 
-$baseDatos=new Db();
+$baseDatos=new Usuario();
 $baseDatos->conectar();
 ?>
 <!DOCTYPE html>
@@ -14,7 +14,7 @@ $baseDatos->conectar();
   </head>
   <body>
     <h1>CREAR PERFIL</h1>
-    <form method="post" action="listadoUsuarios-08.php">
+    <form method="post" action="listadoUsuarios-ex.php" onsubmit="espaciosVacios()">
       <fieldset class="caja">
         <legend>¿QUIEN ERES?</legend>
         <p>Nombre <b>*</b><br>
@@ -42,17 +42,17 @@ $baseDatos->conectar();
         <p>Repite la contraseña <br>
           <input type="password" name="contrasenya2" value="" placeholder="Introduce tu contraseña"></p>
       </fieldset>
-      <fieldset class="caja">
+      <!--<fieldset class="caja">
         <legend>¿CONDICIONES DE REGISTRO?</legend>
         <p>Me va a gustar este juego <br>
         <input type="radio" name="gusto" value="si">¡¡Por supuesto!!
         <input type="radio" name="gusto" value="regular">Al principio no pero me voy a enganchar
         <input type="radio" name="gusto" value="si">Claro, es un clásico atemporal que [bla bla bla] y me va a encantar.</p>
         <p><input type="checkbox" name="acuerdo" value="ok">Acepto jugar sin trampas e intentar mejorar dia a dia.</p>
-      </fieldset>
+      </fieldset>-->
       <input type="submit" name="crear" value="Crear cuenta">
     </form>
-    <button type="button" name="button" onclick="location.href='listadoUsuarios-08.php'">Volver</button>
+    <button type="button" name="button" onclick="location.href='listadoUsuarios-ex.php'">Volver</button>
     <script src="js/comprobarInsertar.js" charset="utf-8"></script>
   </body>
 </html>

@@ -1,8 +1,8 @@
 <?php
 require_once __DIR__.'/../vendor/autoload.php';
-use Daw\models\Db;
+use Daw\models\Usuario;
 
-$baseDatos=new Db();
+$baseDatos=new Usuario();
 $baseDatos->conectar();
 ?>
 <!DOCTYPE html>
@@ -14,7 +14,7 @@ $baseDatos->conectar();
   </head>
   <body>
     <h1>MODIFICAR USUARIO</h1>
-    <form name="enviar" method="post" action="listadoUsuarios-08.php" onsubmit="return js/actualizarBlanco()">
+    <form name="enviar" method="post" action="listadoUsuarios-ex.php" onsubmit="actualizarBlanco()">
       <fieldset>
         <?php
         $baseDatos->leerDatos();
@@ -42,7 +42,7 @@ $baseDatos->conectar();
         <input type="submit" class="actualizar" name="modificar" value="Actualizar">
       </fieldset>
     </form>
-    <button type="button" name="button" onclick="location.href='listadoUsuarios-08.php'">Volver</button>
+    <button type="button" name="button" onclick="location.href='listadoUsuarios-ex.php'">Volver</button>
     <script src="js/comprobarActualizar.js" charset="utf-8"></script>
   </body>
 </html>

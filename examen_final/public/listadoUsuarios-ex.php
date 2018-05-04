@@ -1,8 +1,8 @@
 <?php
 require_once __DIR__.'/../vendor/autoload.php';
-use Daw\models\Db;
+use Daw\models\Usuario;
 
-$baseDatos=new Db();
+$baseDatos=new Usuario();
 $baseDatos->conectar();
 
 if (isset($_POST["crear"])){
@@ -45,13 +45,13 @@ if (isset($_POST["modificar"])){
       <!--nuevo usuario-->
       <fielset>
         <legend>Crear nuevo usuario.</legend>
-        <button type="button" name="button" onclick="location.href='insertarUsuario-08.php'">Crear nuevo usuario</button>
+        <button type="button" name="button" onclick="location.href='insertarUsuario-ex.php'">Crear nuevo usuario</button>
       </fielset>
     <br><br>
       <!--borrar usuario-->
       <fielset>
         <legend>Borrar usuario.</legend>
-        <form class="user" method="post" action="" >
+        <form class="user" method="post" action="" onsubmit="borrado()">
           <select class="" name="usuario">
             <option value="">--Selecciona uno--</option>
             <?php
@@ -65,7 +65,7 @@ if (isset($_POST["modificar"])){
       <!--modificar usuario-->
       <fielset>
         <legend>Modificar usuario.</legend>
-        <form class="user" action="actualizarUsuario-08.php" method="post">
+        <form class="user" action="actualizarUsuario-ex.php" method="post">
           <select class="" name="usuario">
             <option value="">--Selecciona uno--</option>;
             <?php
@@ -75,5 +75,6 @@ if (isset($_POST["modificar"])){
           <input type="submit" value="Modificar"></input>
         </form>
       </fielset>
+    <script src="js/comprobarBorrar.js" charset="utf-8"></script>
   </body>
 </html>
