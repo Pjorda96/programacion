@@ -75,6 +75,6 @@ if (isset($_POST["modificar"])){
           <input type="submit" value="Modificar"></input>
         </form>
       </fielset>
-    <script src="js/comprobarBorrar.js" charset="utf-8"></script>
+    <script type="text/javascript" src="js/comprobarBorrar.js" charset="utf-8"></script>
   </body>
 </html>

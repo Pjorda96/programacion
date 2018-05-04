@@ -53,6 +53,6 @@ $baseDatos->conectar();
       <input type="submit" name="crear" value="Crear cuenta">
     </form>
     <button type="button" name="button" onclick="location.href='listadoUsuarios-ex.php'">Volver</button>
-    <script src="js/comprobarInsertar.js" charset="utf-8"></script>
+    <script type="text/javascript" src="js/comprobarInsertar.js" charset="utf-8"></script>
   </body>
 </html>
