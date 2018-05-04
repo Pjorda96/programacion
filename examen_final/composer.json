@@ -1,0 +1,11 @@
+{
+	"name": "pjorda96/composer",
+	"require": {
+		"monolog/monolog": ">=1.23"
+	},
+	"autoload": {
+		"psr-4": {
+			"Daw\\":"src/"
+		}
+	}
+}
