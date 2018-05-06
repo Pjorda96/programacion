@@ -28,7 +28,7 @@ if (isset($_POST["modificar"])){
       <!--formulario para elegir usuario existente-->
       <fielset>
         <legend>Selecciona tu usuario.</legend>
-        <form class="form" action="" method="post" name="form">
+        <form class="form" action="ahorcado.php" method="post" name="form">
           <select class="" name="usuario">
             <option value="">--Selecciona uno--</option>;
             <?php
