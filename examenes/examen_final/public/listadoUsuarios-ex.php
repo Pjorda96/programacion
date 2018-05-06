@@ -3,7 +3,6 @@ require_once __DIR__.'/../vendor/autoload.php';
 use Daw\models\Usuario;
 
 $baseDatos=new Usuario();
-$baseDatos->conectar();
 
 if (isset($_POST["crear"])){
   $baseDatos->insertarUsuario($_POST['nombre'],$_POST['apellidos'],$_POST['edad'],$_POST['curso'],$_POST['usuario'],$_POST['contrasenya']);

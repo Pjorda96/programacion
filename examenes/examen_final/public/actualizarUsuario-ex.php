@@ -3,7 +3,6 @@ require_once __DIR__.'/../vendor/autoload.php';
 use Daw\models\Usuario;
 
 $baseDatos=new Usuario();
-$baseDatos->conectar();
 ?>
 <!DOCTYPE html>
 <html>
