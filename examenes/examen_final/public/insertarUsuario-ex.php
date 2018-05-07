@@ -13,12 +13,12 @@ $baseDatos=new Juego();
   </head>
   <body>
     <h1>CREAR JUEGO</h1>
-    <form method="post" action="listadoUsuarios-ex.php" onsubmit="return espaciosVacios()">
+    <form method="post" action="listadoUsuarios-ex.php" onsubmit="return Vacios()">
       <fieldset class="caja">
         <p>Nombre <b>*</b><br>
-        <input type="text" name="nombre" value="" placeholder="Introduce el nombre" required></p>
+        <input type="text" name="nombre" value="" id="nombre" placeholder="Introduce el nombre" required></p>
         <p>Edad: <br>
-        <input type="text" name="edad" placeholder="Introduce la edad"></p>
+        <input type="text" name="edad" id="edad" placeholder="Introduce la edad"></p>
       </fieldset>
       <input type="submit" name="crear" value="Crear juego">
     </form>
