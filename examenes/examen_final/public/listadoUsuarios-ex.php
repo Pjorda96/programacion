@@ -1,18 +1,18 @@
 <?php
 require_once __DIR__.'/../vendor/autoload.php';
-use Daw\models\Usuario;
+use Daw\models\Juego;
 
-$baseDatos=new Usuario();
+$baseDatos=new Juego();
 
 if (isset($_POST["crear"])){
-  $baseDatos->insertarUsuario($_POST['nombre'],$_POST['apellidos'],$_POST['edad'],$_POST['curso'],$_POST['usuario'],$_POST['contrasenya']);
+  $baseDatos->insertarJuegos($_POST['nombre'],$_POST['edad']);
 }
-if (isset($_POST["borrar"])){
+/*if (isset($_POST["borrar"])){
   $baseDatos->borrarUsuario($_POST["usuario"]);
 }
 if (isset($_POST["modificar"])){
   $baseDatos->actualizarUsuario($_POST["usuario"],$_POST["nombre"],$_POST["apellidos"],$_POST["edad"],$_POST["curso"]);
-}
+}*/
 ?>
 <!DOCTYPE html>
 <html>
@@ -22,16 +22,16 @@ if (isset($_POST["modificar"])){
     <link rel="stylesheet" href="css/perfilUsuario.css">
   </head>
   <body>
-    <h1>BIENVENIDO AL AHORCADO</h1>
+    <h1>BIENVENIDO</h1>
     <br><br>
       <!--formulario para elegir usuario existente-->
       <fielset>
-        <legend>Selecciona tu usuario.</legend>
-        <form class="form" action="ahorcado.php" method="post" name="form">
+        <legend>Selecciona un juego.</legend>
+        <form class="form" action="" method="post" name="form">
           <select class="" name="usuario">
-            <option value="">--Selecciona uno--</option>;
+            <option value="">--Selecciona uno--</option>
             <?php
-            $baseDatos->lista();
+            $baseDatos->listarJuegos();
             ?>
           </select>
           <input type="submit" value="Empezar"></input>
@@ -44,36 +44,36 @@ if (isset($_POST["modificar"])){
       <!--nuevo usuario-->
       <fielset>
         <legend>Crear nuevo usuario.</legend>
-        <button type="button" name="button" onclick="location.href='insertarUsuario-ex.php'">Crear nuevo usuario</button>
+        <button type="button" name="button" onclick="location.href='insertarUsuario-ex.php'">Crear nuevo juego</button>
       </fielset>
     <br><br>
-      <!--borrar usuario-->
+      <!--borrar usuario--
       <fielset>
         <legend>Borrar usuario.</legend>
         <form class="user" method="post" action="" onsubmit="borrado()">
           <select class="" name="usuario">
             <option value="">--Selecciona uno--</option>
             <?php
-            $baseDatos->lista();
+            //$baseDatos->lista();
             ?>
           </select>
           <input type="submit" name="borrar" value="Borrar"></input>
         </form>
       </fielset>
     <br><br>
-      <!--modificar usuario-->
+      <!--modificar usuario--
       <fielset>
         <legend>Modificar usuario.</legend>
         <form class="user" action="actualizarUsuario-ex.php" method="post">
           <select class="" name="usuario">
             <option value="">--Selecciona uno--</option>;
             <?php
-            $baseDatos->lista();
+            //$baseDatos->lista();
             ?>
           </select>
           <input type="submit" value="Modificar"></input>
         </form>
       </fielset>
-    <script type="text/javascript" src="js/comprobarBorrar.js" charset="utf-8"></script>
+    <script type="text/javascript" src="js/comprobarBorrar.js" charset="utf-8"></script>-->
   </body>
 </html>
