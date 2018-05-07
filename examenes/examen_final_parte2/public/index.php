@@ -20,6 +20,8 @@ use Daw\models\Table as Table;
           <form class="w3-container" action="registro.php" method="post">
             <label class="w3-text-blue"><b>Nombre</b></label>
             <input class="w3-input w3-border" type="text" name="nombre" id="nombre">
+            <label class="w3-text-blue"><b>Edad</b></label>
+            <input class="w3-input w3-border" type="number" name="edad" id="edad">
             <br>
             <button class="w3-btn w3-blue">Registro</button>
           </form>

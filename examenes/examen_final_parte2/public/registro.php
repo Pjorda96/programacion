@@ -6,7 +6,14 @@ use Daw\models\Evento;
 $evento = new Evento();
 
 //insertamos un nuevo Registro
-$evento->nuevoRegistro($_POST["nombre"]);
+if (!isset($_POST["nombre"]) || $_POST["nombre"]==""){
+    $correcto=false;
+}elseif (!isset($_POST["edad"]) || $_POST["edad"]==0){
+    $correcto=false;
+}elseif ((isset($_POST["nombre"])) && (isset($_POST["nombre"]))){
+    $correcto=true;
+    $evento->nuevoRegistro($_POST["nombre"],$_POST["edad"]);
+}
 ?>
 <!DOCTYPE html>
 <html>
@@ -24,10 +31,17 @@ $evento->nuevoRegistro($_POST["nombre"]);
             <h2>Registrado</h2>
           </header>
           <div class="w3-container">
-            <p>Nuevo registro realizado</p>
+            <?php
+              if ($correcto==true){
+                  echo "<p>Nuevo registro realizado</p>";
+              }else{
+                  echo "<p>El nombre o la edad no se han rellenado<p>";
+              }
+            ?>
           </div>
         </div>
         <div class="w3-col w3-container" style="width:30%"></div>
       </div>
+      <button type="button" name="button" onclick="location.href='index.php'">Volver</button>
   </body>
 </html>
