@@ -4,6 +4,12 @@ use Daw\models\Login;
 
 $login = new Login();
 if (isset($_POST["empezar"])) {
+    if ($_POST['rememberMe']=="rememberMe"){
+        $usuario=$_POST["usuario"];
+        $contrasenya=$_POST["contrasenya"];
+        setcookie("user","$usuario",time()+3600);
+        setcookie("pass","$contrasenya",time()+3600);
+    }
     $login->validate($_POST["usuario"],$_POST["contrasenya"]);
 }
 ?>
@@ -22,9 +28,11 @@ if (isset($_POST["empezar"])) {
         <form class="form" action="" onsubmit="return comprobarLogin()" method="post" name="form">
           <p>Iniciar sesión como
            <br><br>
-          <input type="text" name="usuario" id="usuario" placeholder="Usuario:">
-          <input type="password" name="contrasenya" id="contrasenya" placeholder="Contraseña:">
+          <input type="text" name="usuario" id="usuario" placeholder="Usuario:" value="<?php if(!empty($_COOKIE['usuario']))echo $_COOKIE['usuario']; ?>">
+          <input type="password" name="contrasenya" id="contrasenya" placeholder="Contraseña:" value="<?php if(!empty($_COOKIE['contrasenya']))echo $_COOKIE['contrasenya']; ?>"><br>
+          <input type="checkbox" name="rememberMe" value="rememberMe" <?php if (!empty($_COOKIE['usuario']) && !empty($_COOKIE['contrasenya'])) { echo "checked='checked'"; } ?>>Recordarme</input>
           <input type="submit" name="empezar" value="Empezar"></input>
+          </p>
         </form>
         <br><br>
         <!--nuevo usuario-->
